@@ -21,13 +21,7 @@
         <h1>shadcn-inspired</h1>
         <p>A class-less example inspired by shadcn components.</p>
       </hgroup>
-      <nav>
-        <ul>
-          <li><a href="#" data-theme-switcher="auto">Auto</a></li>
-          <li><a href="#" data-theme-switcher="light">Light</a></li>
-          <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-        </ul>
-      </nav>
+      <button onclick="toggleDarkMode()">Toggle theme</button>
     </header>
     <!-- ./ Header -->
 
@@ -427,17 +421,12 @@
           Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
           finibus pellentesque. Nullam finibus risus non semper euismod.
         </p>
+
         <button aria-label="Close" rel="prev" onclick="modalExample.close()">
           Close
         </button>
-        <footer>
-          <small>
-            Inspired by <a href="https://ui.shadcn.com/">shadcn/ui</a> and
-            <a href="https://picocss.com">Pico</a>
-          </small>
-        </footer>
       </article>
     </dialog>
-    <script src="js/minimal-theme-switcher.js"></script>
+    <script src="js/theme-switcher.js"></script>
   </body>
 </html>
