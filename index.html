@@ -149,6 +149,52 @@
       </section>
       <!-- ./ Typography-->
 
+      <!-- Table -->
+      <section>
+        <h2>Table</h2>
+        <table style="width: 100%;">
+          <caption>
+            Table caption
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Person</th>
+              <th scope="col">Most interest in</th>
+              <th scope="col">Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Chris</th>
+              <td>HTML tables</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <th scope="row">Dennis</th>
+              <td>Web accessibility</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th scope="row">Sarah</th>
+              <td>JavaScript frameworks</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <th scope="row">Karen</th>
+              <td>Web performance</td>
+              <td>36</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2">Average age</th>
+              <td>33</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <!-- ./ Table -->
+
       <!-- Form elements-->
       <section id="form">
         <form>
@@ -315,11 +361,49 @@
       <!-- Modal -->
       <section id="modal">
         <h2>Modal</h2>
-        <button class="contrast" onclick="modalExample.showModal()">
+        <button onclick="modalExample.showModal()">
           Launch demo modal
         </button>
+
+        <!-- Modal example -->
+        <dialog id="modalExample">
+          <header>
+            <h3>Confirm your action!</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="modalExample.close()">
+            Close
+          </button>
+        </dialog>
       </section>
       <!-- ./ Modal -->
+
+      
+      <!-- Drawer -->
+      <section id="drawer">
+        <h2>Drawer</h2>
+        <button onclick="document.getElementById('drawerExample').showModal()">
+          Launch demo drawer
+        </button>
+        
+        <!-- Drawer example -->
+        <dialog drawer id="drawerExample">
+          <header>
+            <h3>Confirm your action!</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="drawerExample.close()">
+            Close
+          </button>
+        </dialog>
+      </section>
+      <!-- ./ Drawer -->
 
       <!-- Accordions -->
       <section id="accordions">
@@ -398,6 +482,26 @@
         <button aria-busy="true">Please wait…</button>
       </section>
       <!-- ./ Loading -->
+
+
+      <!-- Loading -->
+      <section id="separator">
+        <h2>Separator</h2>
+        <p>
+          Radix Primitives
+An open-source UI component library.
+        </p>
+        <hr/>
+        <div style="display: flex;">
+          <a href="#">Blog</a>
+          <hr vertical/>
+          <a href="#">Docs</a>
+          <hr vertical/>
+          <a href="#">Source</a>
+        </div>
+      </section>
+      <!-- ./ Loading -->
+
     </main>
     <!-- ./ Main -->
 
@@ -410,22 +514,7 @@
     </footer>
     <!-- ./ Footer -->
 
-    <!-- Modal example -->
-    <dialog id="modalExample">
-      <article>
-        <header>
-          <h3>Confirm your action!</h3>
-        </header>
-        <p>
-          Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
-          finibus pellentesque. Nullam finibus risus non semper euismod.
-        </p>
-
-        <button aria-label="Close" rel="prev" onclick="modalExample.close()">
-          Close
-        </button>
-      </article>
-    </dialog>
+    
     <script src="js/theme-switcher.js"></script>
   </body>
 </html>
