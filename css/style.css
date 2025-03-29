@@ -172,7 +172,6 @@ legend {
 }
 label {
   display: block;
-  margin-bottom: 0.5rem;
 }
 small {
   color: var(--muted-foreground);
@@ -252,3 +251,21 @@ footer {
     flex-direction: column;
   }
 }
+
+input[type="file"]::file-selector-button {
+  border: none;
+  background-color: var(--background);
+  font-weight: 600;
+}
+
+*:disabled {
+  cursor: not-allowed;
+}
+
+input[type="radio"], 
+input[type="checkbox"], 
+input[type="range"]{
+  accent-color: var(--primary);
+  background-color: var(--background);
+}
+
