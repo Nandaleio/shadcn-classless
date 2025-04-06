@@ -71,7 +71,9 @@
 body {
   color-scheme: light dark;
 }
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 * {
@@ -96,23 +98,35 @@ h6 {
 }
 
 h1 {
-  font-size: 32px;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 h2 {
-  font-size: 28px;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 h3 {
-  font-size: 24px;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 h4 {
-  font-size: 20px;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.75rem;
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 h6 {
@@ -234,7 +248,7 @@ dialog {
   color: var(--foreground);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: 24px;
   margin: auto;
 }
 dialog::backdrop {
@@ -275,7 +289,7 @@ footer {
   }
 }
 
-input[type="file"]::file-selector-button {
+input[type='file']::file-selector-button {
   border: none;
   background-color: var(--background);
   font-weight: 600;
@@ -285,24 +299,23 @@ input[type="file"]::file-selector-button {
   cursor: not-allowed;
 }
 
-input[type="radio"], 
-input[type="checkbox"], 
-input[type="range"]{
+input[type='radio'],
+input[type='checkbox'],
+input[type='range'] {
   accent-color: var(--primary);
   background-color: var(--background);
 }
 
 kbd {
-  padding: .125rem .625rem;
+  padding: 0.125rem 0.625rem;
   background-color: var(--primary);
   color: var(--primary-foreground);
   border-radius: var(--radius);
 }
 
 table {
-
   caption-side: bottom;
-  border-collapse: collapse; 
+  border-collapse: collapse;
 
   caption {
     color: var(--muted-foreground);
@@ -313,14 +326,15 @@ table {
     color: var(--muted-foreground);
   }
 
-  tr{
+  tr {
     border-bottom: 1px solid var(--border);
   }
   tr:hover {
-    background-color: hsl(var(--muted) / .5);
+    background-color: hsl(var(--muted) / 0.5);
   }
 
-  td, th{
+  td,
+  th {
     vertical-align: middle;
     padding: 0.5rem;
     text-align: start;
@@ -339,16 +353,20 @@ dialog[drawer] {
   width: 100vw;
   max-height: 50vh;
 
-  &[open]{
+  &[open] {
     animation: slideup 0.2s ease-in forwards;
   }
 }
-@keyframes slideup{
-  0%{
-    transform:translateY(100%);
+
+dialog > header {
+  margin: 0;
+}
+@keyframes slideup {
+  0% {
+    transform: translateY(100%);
   }
-  100%{
-    transform:translateY(0);
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -361,7 +379,7 @@ progress {
   background-color: var(--muted);
   border: 0;
 }
-progress[value]::-webkit-progress-value{
+progress[value]::-webkit-progress-value {
   border-radius: 9999px;
   background-color: var(--primary);
 }
@@ -370,13 +388,15 @@ progress[value]::-webkit-progress-value{
   border-radius: 9999px;
   background-color: var(--muted);
 }
-::-moz-progress-bar{
+::-moz-progress-bar {
   border-radius: 9999px;
   background-color: var(--primary);
 }
 
 progress:indeterminate {
-  background: var(--muted) linear-gradient(to right, var(--primary) 35%, var(--muted) 35%) top left/150% 150% no-repeat;
+  background: var(--muted)
+    linear-gradient(to right, var(--primary) 35%, var(--muted) 35%) top
+    left/150% 150% no-repeat;
   animation: progress-indeterminate 1.5s linear infinite;
 }
 progress:indeterminate::-webkit-progress-bar {
@@ -394,7 +414,6 @@ progress:indeterminate::-moz-progress-bar {
     background-position: -200% 0;
   }
 }
-
 
 hr {
   border: 0;
