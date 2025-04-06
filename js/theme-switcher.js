@@ -5,12 +5,12 @@ function toggleDarkMode () {
 
 // On page load
 document.addEventListener('DOMContentLoaded', event => {
-  // Aseguramos que la página inicie en light mode
+  // Ensure the page starts in light mode
   document.body.classList.remove('dark-mode')
 
-  // Verificamos el estado almacenado en localStorage
+  // Check the stored state in localStorage
   if (localStorage.getItem('darkMode') === 'enabled') {
-    // Si estaba habilitado, activamos el dark mode
+    // If it was enabled, activate dark mode
     document.body.classList.add('dark-mode')
   }
 })
