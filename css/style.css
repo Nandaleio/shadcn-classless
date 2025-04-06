@@ -173,7 +173,6 @@ legend {
 }
 label {
   display: block;
-  margin-bottom: 0.5rem;
 }
 small {
   color: var(--muted-foreground);
