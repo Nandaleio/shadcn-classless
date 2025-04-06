@@ -46,11 +46,12 @@
 body {
   color-scheme: light dark;
 }
-
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 body {
   font-family: 'Inter', sans-serif;
@@ -209,13 +210,10 @@ dialog {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1rem;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
 }
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 details {
@@ -269,3 +267,120 @@ input[type="range"]{
   background-color: var(--background);
 }
 
+kbd {
+  padding: .125rem .625rem;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius);
+}
+
+table {
+
+  caption-side: bottom;
+  border-collapse: collapse; 
+
+  caption {
+    color: var(--muted-foreground);
+    margin-top: 1rem;
+  }
+
+  th {
+    color: var(--muted-foreground);
+  }
+
+  tr{
+    border-bottom: 1px solid var(--border);
+  }
+  tr:hover {
+    background-color: hsl(var(--muted) / .5);
+  }
+
+  td, th{
+    vertical-align: middle;
+    padding: 0.5rem;
+    text-align: start;
+  }
+
+  tfoot {
+    background-color: var(--muted);
+  }
+}
+
+dialog[drawer] {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  top: auto;
+  bottom: 0;
+  width: 100vw;
+  max-height: 50vh;
+
+  &[open]{
+    animation: slideup 0.2s ease-in forwards;
+  }
+}
+@keyframes slideup{
+  0%{
+    transform:translateY(100%);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--muted);
+  border: 0;
+}
+progress[value]::-webkit-progress-value{
+  border-radius: 9999px;
+  background-color: var(--primary);
+}
+
+::-webkit-progress-bar {
+  border-radius: 9999px;
+  background-color: var(--muted);
+}
+::-moz-progress-bar{
+  border-radius: 9999px;
+  background-color: var(--primary);
+}
+
+progress:indeterminate {
+  background: var(--muted) linear-gradient(to right, var(--primary) 35%, var(--muted) 35%) top left/150% 150% no-repeat;
+  animation: progress-indeterminate 1.5s linear infinite;
+}
+progress:indeterminate::-webkit-progress-bar {
+  background-color: transparent;
+}
+progress:indeterminate::-moz-progress-bar {
+  background-color: transparent;
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+hr {
+  border: 0;
+  height: 1px;
+  margin: 1rem 0;
+  background-color: var(--border);
+  flex-shrink: 0;
+}
+
+hr[vertical] {
+  width: 1px;
+  height: 1.25rem;
+  margin: 0 1rem;
+}
