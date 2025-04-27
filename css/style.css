@@ -32,6 +32,9 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+
+  --shadow-color: 0 4px 6px -1px oklch(0 0 0 / 10%),0 2px 4px -2px oklch(0 0 0 / 10%);
+  --shadow: 0 0 #0000 0 0 #0000,var(--shadow-color);
 }
 
 .dark-mode {
@@ -306,8 +309,47 @@ input[type='range'] {
   background-color: var(--background);
 }
 
+/** Toggles */
+input[type="checkbox"][icon] {
+  display: none;
+  + * {
+    cursor: pointer;
+    border-radius: var(--radius);
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: var(--border);
+    }
+  }
+}
+input[type="checkbox"][icon] {
+  display: none;
+  + * {
+    cursor: pointer;
+    border-radius: var(--radius);
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: var(--border);
+      stroke: var(--muted-foreground);
+    }
+  }
+}
+input[type="checkbox"][icon]:checked {
+  + * {
+    background-color: var(--border);
+
+    &:hover {
+      stroke: var(--accent-foreground);
+    }
+  }
+}
+
+
 kbd {
-  padding: 0.125rem 0.625rem;
+  padding: .125rem .625rem;
   background-color: var(--primary);
   color: var(--primary-foreground);
   border-radius: var(--radius);
