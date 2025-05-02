@@ -1,0 +1,72 @@
+@import url('./shadcn-classless.css');
+
+body {    
+    margin: 0 12rem;
+    padding: 0;
+
+    height: 100vh;
+}
+
+* {
+    scroll-behavior: smooth;
+    ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+*::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.demo-container {
+    display: flex;
+    flex-direction: row;
+
+    height: 100%;
+
+    .demo-sidenav {
+        overflow-y: auto;
+
+        border-left: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+
+        display: flex;
+;
+        flex-direction: column;
+        padding: 1rem 0.5rem 0 1rem;
+        gap: 0.2rem;
+
+        width: 25%;
+
+        
+        a {
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            transition: background-color 0.2s ease-in-out;
+            text-align: start;
+            border: none;
+            background-color: transparent;
+            &:hover{
+                background-color: var(--muted);
+            }
+        }
+        a[disabled] {
+            opacity: 70%;
+            pointer-events: none;
+        }
+    }
+
+    .demo-gapped {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+main {
+    padding: 2rem;
+    overflow-y: auto;
+}

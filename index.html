@@ -5,534 +5,659 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Class-less preview • shadcn-inspired CSS</title>
-    <meta
-      name="description"
-      content="A class-less example inspired by shadcn components."
-    />
+  <meta
+    name="description"
+    content="A class-less example inspired by shadcn components."
+  />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/x-icon" href="https://jidef.github.io/favicon/favicon.ico">
+  <link rel="stylesheet" href="css/demo-style.css"/>
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <hgroup>
-      <h1>shadcn-inspired</h1>
-      <p>A class-less example inspired by shadcn components.</p>
-    </hgroup>
-    <button onclick="toggleDarkMode()">Toggle theme</button>
-  </header>
-  <!-- ./ Header -->
+  <div class="demo-container">
+    <div class="demo-sidenav">
+      Getting started
+      
+      <a href="#introdution">Introdution</a>
+      <a disabled href="#">Installation</a>
 
-  <!-- Main -->
-  <main>
-    <!-- Preview -->
-    <section id="preview">
-      <h2>Preview</h2>
-      <p>
-        Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
-        suscipit sapien. Nulla iaculis eros a elit pharetra egestas.
-      </p>
-      <form>
-          <input
-            type="text"
-            name="firstname"
-            placeholder="First name"
-            aria-label="First name"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            aria-label="Email address"
-            autocomplete="email"
-            required
-          />
-        <button type="submit">Subscribe</button>
-        <fieldset>
-          <label for="terms">
-            <input type="checkbox" role="switch" id="terms" name="terms" />
-            I agree to the
-            <a href="#" onclick="event.preventDefault()">Privacy Policy</a>
-          </label>
-        </fieldset>
-      </form>
-    </section>
-    <!-- ./ Preview -->
 
-    <!-- Typography-->
-    <section id="typography">
-      <h2>Typography</h2>
-      <p>
-        Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget
-        efficitur feugiat. Vivamus porta nunc a erat mattis, mattis feugiat
-        turpis pretium. Quisque sed tristique felis.
-      </p>
+      Components
+      <a href="#accordion">Accordion</a>
+      <a disabled href="#">Alert</a>
+      <a disabled href="#">Alert Dialog</a>
+      <a disabled href="#">Aspect Ratio</a>
+      <a disabled href="#">Avatar</a>
+      <a href="#badge">Badge</a>
+      <a href="#breadcrumb">Breadcrumb</a>
+      <a href="#button">Button</a>
+      <a disabled href="#">Calendar</a>
+      <a href="#card">Card</a>
+      <a disabled href="#">Carousel</a>
+      <a disabled href="#">Chart</a>
+      <a href="#checkbox">Checkbox</a>
+      <a disabled href="#">Collapsible</a>
+      <a disabled href="#">Combobox</a>
+      <a disabled href="#">Command</a>
+      <a disabled href="#">Context Menu</a>
+      <a disabled href="#">Data Table</a>
+      <a disabled href="#">Date Picker</a>
+      <a href="#dialog">Dialog</a>
+      <a href="#drawer">Drawer</a>
+      <a disabled href="#">Dropdown Menu</a>
+      <a href="#form">Form</a>
+      <a disabled href="#">Hover Card</a>
+      <a href="#input">Input</a>
+      <a disabled href="#">Input OTP</a>
+      <a href="#label">Label</a>
+      <a href="#menubar">Menubar</a>
+      <a href="#navigationmenu">Navigation Menu</a>
+      <a disabled href="#">Pagination</a>
+      <a disabled href="#">Popover</a>
+      <a href="#progress">Progress</a>
+      <a href="#radio">Radio Group</a>
+      <a disabled href="#">Resizable</a>
+      <a disabled href="#">Scroll Area</a>
+      <a href="#select">Select</a>
+      <a href="#separator">Separator</a>
+      <a disabled href="#">Sheet</a>
+      <a disabled href="#">Sidebar</a>
+      <a disabled href="#">Skeleton</a>
+      <a href="#slider">Slider</a>
+      <a disabled href="#">Sonner</a>
+      <a disabled href="#">Switch</a>
+      <a href="#table">Table</a>
+      <a disabled href="#">Tabs</a>
+      <a href="#textarea">Textarea</a>
+      <a disabled href="#">Toast</a>
+      <a href="#toggle">Toggle</a>
+      <a disabled href="#">Tooltip</a>
 
-      <!-- Blockquote-->
-      <blockquote>
-        "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non.
-        Nam at dui sit amet ipsum cursus ornare."
-        <footer>
-          <cite>- Phasellus eget lacinia</cite>
-        </footer>
-      </blockquote>
+    </div>
 
-      <!-- Lists-->
-      <h3>Lists</h3>
-      <ul>
-        <li>Aliquam lobortis lacus eu libero ornare facilisis.</li>
-        <li>Nam et magna at libero scelerisque egestas.</li>
-        <li>Suspendisse id nisl ut leo finibus vehicula quis eu ex.</li>
-        <li>Proin ultricies turpis et volutpat vehicula.</li>
-      </ul>
 
-      <!-- Inline text elements-->
-      <h3>Inline text elements</h3>
-      <p><a href="#" onclick="event.preventDefault()">Link</a></p>
-      <p><strong>Bold</strong></p>
-      <p><em>Italic</em></p>
-      <p><u>Underline</u></p>
-      <p><del>Deleted</del></p>
-      <p><ins>Inserted</ins></p>
-      <p><s>Strikethrough</s></p>
-      <p><small>Small </small></p>
-      <p>Text <sub>Sub</sub></p>
-      <p>Text <sup>Sup</sup></p>
-      <p>
-        <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
-      </p>
-        <p><kbd>Kbd</kbd></p>
-      <p><mark>Highlighted</mark></p>
+    <main>
 
-      <!-- Headings-->
-      <h3>Heading 3</h3>
-      <p>
-        Integer bibendum malesuada libero vel eleifend. Fusce iaculis turpis
-        ipsum, at efficitur sem scelerisque vel. Aliquam auctor diam ut purus
-        cursus fringilla. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos.
-      </p>
-      <h4>Heading 4</h4>
-      <p>
-        Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at
-        blandit nibh. Donec ac fermentum felis. Vivamus tincidunt arcu ut
-        lacus hendrerit, eget mattis dui finibus.
-      </p>
-      <h5>Heading 5</h5>
-      <p>
-        Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris
-        maximus ante in consequat luctus. Morbi euismod sagittis efficitur.
-        Aenean non eros orci. Vivamus ut diam sem.
-      </p>
-      <h6>Heading 6</h6>
-      <p>
-        Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum
-        tincidunt nulla ut tortor posuere, vitae malesuada tortor molestie.
-        Sed nec interdum dolor. Vestibulum id auctor nisi, a efficitur sem.
-        Aliquam sollicitudin efficitur turpis, sollicitudin hendrerit ligula
-        semper id. Nunc risus felis, egestas eu tristique eget, convallis in
-        velit.
-      </p>
+      <section id="introdution">
+        <hgroup>
+          <h1>shadcn-inspired</h1>
+          <p>A class-less example inspired by shadcn components.</p>
+        </hgroup>
+        <button onclick="toggleDarkMode()">Toggle theme</button>
+      </section>
 
-      <!-- Medias-->
-      <figure>
-        <img src="img/img.jpg" alt="Minimal landscape" />
-        <figcaption>
-          Image from
-            <a href="https://unsplash.com/photos/a562ZEFKW8I" target="_blank"
-              >unsplash.com</a
-            >
-        </figcaption>
-      </figure>
-    </section>
-    <!-- ./ Typography-->
-
-    <!-- Table -->
-      <section>
-      <h2>Table</h2>
-      <table style="width: 100%;">
-        <caption>
-          Table caption
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">Person</th>
-            <th scope="col">Most interest in</th>
-            <th scope="col">Age</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td scope="row">Chris</th>
-            <td>HTML tables</td>
-            <td>22</td>
-          </tr>
-          <tr>
-            <td scope="row">Dennis</th>
-            <td>Web accessibility</td>
-            <td>45</td>
-          </tr>
-          <tr>
-            <td scope="row">Sarah</th>
-            <td>JavaScript frameworks</td>
-            <td>29</td>
-          </tr>
-          <tr>
-            <td scope="row">Karen</th>
-            <td>Web performance</td>
-            <td>36</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th scope="row" colspan="2">Average age</th>
-            <td>33</td>
-          </tr>
-        </tfoot>
-      </table>
-    </section>
-    <!-- ./ Table -->
-
-    <!-- Form elements-->
-      <section id="form">
-      <form>
-        <h2>Form elements</h2>
-
-        <!-- Search -->
-        <label for="search">Search</label>
-        <input type="search" id="search" name="search" placeholder="Search" />
-
-        <!-- Textarea -->
-        <label for="textarea">Textarea</label>
-        <textarea name="" id="textarea"></textarea>
-
-        <!-- Text -->
-        <label for="text">Text</label>
-        <input type="text" id="text" name="text" placeholder="Text" />
-        <small>Curabitur consequat lacus at lacus porta finibus.</small>
-
-        <!-- Select -->
-        <label for="select">Select</label>
-        <select id="select" name="select" required>
-          <option value="" selected>Select…</option>
-          <option>…</option>
-        </select>
-
-        <!-- File browser -->
-          <label for="file"
-            >File browser
-          <input type="file" id="file" name="file" />
-        </label>
-
-        <!-- Range slider control -->
-          <label for="range"
-            >Range slider
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              id="range"
-              name="range"
-            />
-        </label>
-
-        <!-- States -->
-
-        <label for="valid">
-          Valid
-            <input
-              type="text"
-              id="valid"
-              name="valid"
-              placeholder="Valid"
-              aria-invalid="false"
-            />
-        </label>
-        <label for="invalid">
-          Invalid
-            <input
-              type="text"
-              id="invalid"
-              name="invalid"
-              placeholder="Invalid"
-              aria-invalid="true"
-            />
-        </label>
-        <label for="disabled">
-          Disabled
-            <input
-              type="text"
-              id="disabled"
-              name="disabled"
-              placeholder="Disabled"
-              disabled
-            />
-        </label>
-
-        <!-- Date-->
-          <label for="date"
-            >Date
-          <input type="date" id="date" name="date" />
-        </label>
-
-        <!-- Time-->
-          <label for="time"
-            >Time
-          <input type="time" id="time" name="time" />
-        </label>
-
-        <!-- Color-->
-          <label for="color"
-            >Color
-          <input type="color" id="color" name="color" value="#0eaaaa" />
-        </label>
-
-        <!-- Checkboxes -->
+      <!-- Preview -->
+      <section id="preview">
+        <h2>Preview</h2>
+        <p>
+          Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
+          suscipit sapien. Nulla iaculis eros a elit pharetra egestas.
+        </p>
+        <form>
+          <input type="text" name="firstname" placeholder="First name" aria-label="First name" required />
+          <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email"
+            required />
+          <button type="submit">Subscribe</button>
           <fieldset>
-          <legend><strong>Checkboxes</strong></legend>
-          <label for="checkbox-1">
-              <input
-                type="checkbox"
-                id="checkbox-1"
-                name="checkbox-1"
-                checked
-              />
-            Checkbox
-          </label>
-          <label for="checkbox-2">
-            <input type="checkbox" id="checkbox-2" name="checkbox-2" />
-            Checkbox
-          </label>
-        </fieldset>
+            <label for="terms">
+              <input type="checkbox" role="switch" id="terms" name="terms" />
+              I agree to the
+              <a href="#" onclick="event.preventDefault()">Privacy Policy</a>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+      <!-- ./ Preview -->
 
-        <!-- Toggles -->
-        <fieldset id="toggles-id">
-          <legend><strong>Toggles</strong></legend>
 
-          <input id="toggle1" type="checkbox" icon checked>
-          <i data-lucide="bold" onclick="document.getElementById('toggle1').click()"></i>
+      <hr />
 
-          <input id="toggle2" type="checkbox" icon>
-          <i data-lucide="italic" onclick="document.getElementById('toggle2').click()"></i>
-        </fieldset>
 
-        <!-- Radio buttons -->
-        <fieldset>
-          <legend><strong>Radio buttons</strong></legend>
-          <label for="radio-1">
-              <input
-                type="radio"
-                id="radio-1"
-                name="radio"
-                value="radio-1"
-                checked
-              />
-            Radio button
-          </label>
-          <label for="radio-2">
-            <input type="radio" id="radio-2" name="radio" value="radio-2" />
-            Radio button
-          </label>
-        </fieldset>
-
-        <!-- Switch -->
-        <fieldset>
-          <legend><strong>Switches</strong></legend>
-          <label for="switch-1">
-              <input
-                type="checkbox"
-                id="switch-1"
-                name="switch-1"
-                role="switch"
-                checked
-              />
-            Switch
-          </label>
-          <label for="switch-2">
-              <input
-                type="checkbox"
-                id="switch-2"
-                name="switch-2"
-                role="switch"
-              />
-            Switch
-          </label>
-        </fieldset>
-
-      <!-- Buttons -->
-      <input type="reset" value="Reset" onclick="event.preventDefault()" />
-          <input
-            type="submit"
-            value="Submit"
-            onclick="event.preventDefault()"
-          />
-      </form>
-    </section>
-    <!-- ./ Form elements-->
-
-    <!-- Modal -->
-      <section id="modal">
-      <h2>Modal</h2>
-      <button onclick="modalExample.showModal()">
-        Launch demo modal
-      </button>
-
-      <!-- Modal example -->
-      <dialog id="modalExample">
-        <header>
-          <h3>Confirm your action!</h3>
-        </header>
+      <!-- Typography-->
+      <section id="typography">
+        <h2>Typography</h2>
         <p>
-          Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
-          finibus pellentesque. Nullam finibus risus non semper euismod.
+          Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget
+          efficitur feugiat. Vivamus porta nunc a erat mattis, mattis feugiat
+          turpis pretium. Quisque sed tristique felis.
         </p>
-        <button aria-label="Close" rel="prev" onclick="modalExample.close()">
-          Close
-        </button>
-      </dialog>
-    </section>
-    <!-- ./ Modal -->
 
+        <!-- Blockquote-->
+        <blockquote>
+          "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non.
+          Nam at dui sit amet ipsum cursus ornare."
+          <footer>
+            <cite>- Phasellus eget lacinia</cite>
+          </footer>
+        </blockquote>
 
-    <!-- Drawer -->
-      <section id="drawer">
-      <h2>Drawer</h2>
-      <button onclick="document.getElementById('drawerExample').showModal()">
-        Launch demo drawer
-      </button>
-
-      <!-- Drawer example -->
-      <dialog drawer id="drawerExample">
-        <header>
-          <h3>Confirm your action!</h3>
-        </header>
-        <p>
-          Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
-          finibus pellentesque. Nullam finibus risus non semper euismod.
-        </p>
-        <button aria-label="Close" rel="prev" onclick="drawerExample.close()">
-          Close
-        </button>
-      </dialog>
-    </section>
-    <!-- ./ Drawer -->
-
-    <!-- Accordions -->
-      <section id="accordions">
-      <h2>Accordions</h2>
-      <details>
-        <summary>Accordion 1</summary>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Pellentesque urna diam, tincidunt nec porta sed, auctor id velit.
-          Etiam venenatis nisl ut orci consequat, vitae tempus quam commodo.
-          Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis
-          lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris
-          pulvinar pulvinar mi, dictum tristique elit auctor quis. Maecenas ac
-          ipsum ultrices, porta turpis sit amet, congue turpis.
-        </p>
-      </details>
-      <details open>
-        <summary>Accordion 2</summary>
+        <!-- Lists-->
+        <h3>Lists</h3>
         <ul>
-          <li>Vestibulum id elit quis massa interdum sodales.</li>
-          <li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
-          <li>Quisque sed eros non eros ornare elementum.</li>
-          <li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
+          <li>Aliquam lobortis lacus eu libero ornare facilisis.</li>
+          <li>Nam et magna at libero scelerisque egestas.</li>
+          <li>Suspendisse id nisl ut leo finibus vehicula quis eu ex.</li>
+          <li>Proin ultricies turpis et volutpat vehicula.</li>
         </ul>
-      </details>
-    </section>
-    <!-- ./ Accordions -->
 
-    <!-- Article-->
-      <article id="article">
-      <h2>Article</h2>
-      <p>
-        Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed
-        ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
-        suscipit sapien. Nulla iaculis eros a elit pharetra egestas. Nunc
-        placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra
-        rutrum.
-      </p>
-      <footer>
-          <small
-            >Duis nec elit placerat, suscipit nibh quis, finibus neque.</small
-          >
-      </footer>
-    </article>
-    <!-- ./ Article-->
+        <!-- Inline text elements-->
+        <h3>Inline text elements</h3>
+        <p><a href="#" onclick="event.preventDefault()">Link</a></p>
+        <p><strong>Bold</strong></p>
+        <p><em>Italic</em></p>
+        <p><u>Underline</u></p>
+        <p><del>Deleted</del></p>
+        <p><ins>Inserted</ins></p>
+        <p><s>Strikethrough</s></p>
+        <p><small>Small </small></p>
+        <p>Text <sub>Sub</sub></p>
+        <p>Text <sup>Sup</sup></p>
+        <p>
+          <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>
+        </p>
+        <p><kbd>Kbd</kbd></p>
+        <p><mark>Highlighted</mark></p>
 
-    <!-- Group -->
-    <section id="group">
-      <h2>Group</h2>
-      <form>
-        <fieldset role="group">
-            <input
-              name="email"
-              type="email"
-              placeholder="Enter your email"
-              autocomplete="email"
-            />
-          <input type="submit" value="Subscribe" />
-        </fieldset>
-      </form>
-    </section>
-    <!-- ./ Group -->
+        <!-- Headings-->
+        <h3>Heading 3</h3>
+        <p>
+          Integer bibendum malesuada libero vel eleifend. Fusce iaculis turpis
+          ipsum, at efficitur sem scelerisque vel. Aliquam auctor diam ut purus
+          cursus fringilla. Class aptent taciti sociosqu ad litora torquent per
+          conubia nostra, per inceptos himenaeos.
+        </p>
+        <h4>Heading 4</h4>
+        <p>
+          Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at
+          blandit nibh. Donec ac fermentum felis. Vivamus tincidunt arcu ut
+          lacus hendrerit, eget mattis dui finibus.
+        </p>
+        <h5>Heading 5</h5>
+        <p>
+          Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris
+          maximus ante in consequat luctus. Morbi euismod sagittis efficitur.
+          Aenean non eros orci. Vivamus ut diam sem.
+        </p>
+        <h6>Heading 6</h6>
+        <p>
+          Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum
+          tincidunt nulla ut tortor posuere, vitae malesuada tortor molestie.
+          Sed nec interdum dolor. Vestibulum id auctor nisi, a efficitur sem.
+          Aliquam sollicitudin efficitur turpis, sollicitudin hendrerit ligula
+          semper id. Nunc risus felis, egestas eu tristique eget, convallis in
+          velit.
+        </p>
 
-    <!-- Progress -->
+        <!-- Medias-->
+        <figure>
+          <img src="img/img.jpg" alt="Minimal landscape" />
+          <figcaption>
+            Image from
+            <a href="https://unsplash.com/photos/a562ZEFKW8I" target="_blank">unsplash.com</a>
+          </figcaption>
+        </figure>
+      </section>
+      <!-- ./ Typography-->
+
+
+      <hr />
+
+      <section id="accordion">
+        <h2>Accordions</h2>
+        <details>
+          <summary>Accordion 1</summary>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque urna diam, tincidunt nec porta sed, auctor id velit.
+            Etiam venenatis nisl ut orci consequat, vitae tempus quam commodo.
+            Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis
+            lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris
+            pulvinar pulvinar mi, dictum tristique elit auctor quis. Maecenas ac
+            ipsum ultrices, porta turpis sit amet, congue turpis.
+          </p>
+        </details>
+        <details open>
+          <summary>Accordion 2</summary>
+          <ul>
+            <li>Vestibulum id elit quis massa interdum sodales.</li>
+            <li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
+            <li>Quisque sed eros non eros ornare elementum.</li>
+            <li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
+          </ul>
+        </details>
+      </section>
+
+      <hr />
+
+      <section id="badge">
+        <h2>Badge</h2>
+        <kbd>Kbd</kbd>
+      </section>
+
+      <hr />
+
+      <section id="breadcrumb">
+        <h2>Breadcrumb</h2>
+        TODO
+      </section>
+
+      <hr />
+
+      <section id="button">
+        <h2>Buttons</h2>
+        <button>primary</button>
+        <input type="submit" value="outline">
+        <input type="button" value="ghost">
+        <input type="reset" value="reset">
+      </section>
+
+      <hr />
+
+      <section id="card">
+        <h2>Card</h2>
+
+        <article id="article">
+          <p>
+            Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed
+            ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
+            suscipit sapien. Nulla iaculis eros a elit pharetra egestas. Nunc
+            placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra
+            rutrum.
+          </p>
+          <footer>
+            <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
+          </footer>
+        </article>
+      </section>
+
+      <hr />
+
+      <section id="checkbox">
+        <h2>Checkbox</h2>
+        <input type="checkbox" checked />
+        <input type="checkbox" />
+      </section>
+
+      <hr />
+
+      <section id="dialog">
+        <h2>Dialog</h2>
+        <button onclick="modalExample.showModal()">
+          Open dialog
+        </button>
+
+        <dialog id="modalExample">
+          <header>
+            <h3>Confirm your action!</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="modalExample.close()">
+            Close
+          </button>
+        </dialog>
+      </section>
+
+      <hr />
+
+      <section id="drawer">
+        <h2>Drawer</h2>
+        <button onclick="document.getElementById('drawerExample').showModal()">
+          Open drawer
+        </button>
+
+        <dialog drawer id="drawerExample">
+          <header>
+            <h3>Confirm your action!</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="drawerExample.close()">
+            Close
+          </button>
+        </dialog>
+      </section>
+
+      <hr />
+
+      <section id="form">
+        <h2>Form</h2>
+        <form>
+
+          <!-- Search -->
+          <label for="search">Search</label>
+          <input type="search" id="search" name="search" placeholder="Search" />
+
+          <!-- Textarea -->
+          <label for="textarea1">Textarea</label>
+          <textarea name="" id="textarea1"></textarea>
+
+          <!-- Text -->
+          <label for="text">Text</label>
+          <input type="text" id="text" name="text" placeholder="Text" />
+          <small>Curabitur consequat lacus at lacus porta finibus.</small>
+
+          <!-- Select -->
+          <label for="select1">Select</label>
+          <select id="select1" name="select" required>
+            <option value="" selected>Select…</option>
+            <option>…</option>
+          </select>
+
+          <!-- File browser -->
+          <label for="file">File browser
+            <input type="file" id="file" name="file" />
+          </label>
+
+          <!-- Range slider control -->
+          <label for="range">Range slider
+            <input type="range" min="0" max="100" value="50" id="range" name="range" />
+          </label>
+
+          <!-- States -->
+          <label for="disabled">
+            Disabled
+            <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled />
+          </label>
+
+          <!-- Date-->
+          <label for="date">Date
+            <input type="date" id="date" name="date" />
+          </label>
+
+          <!-- Time-->
+          <label for="time">Time
+            <input type="time" id="time" name="time" />
+          </label>
+
+          <!-- Color-->
+          <label for="color">Color
+            <input type="color" id="color" name="color" value="#0eaaaa" />
+          </label>
+
+          <!-- Checkboxes -->
+          <fieldset>
+            <legend><strong>Checkboxes</strong></legend>
+            <label for="checkbox-1">
+              <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
+              Checkbox
+            </label>
+            <label for="checkbox-2">
+              <input type="checkbox" id="checkbox-2" name="checkbox-2" />
+              Checkbox
+            </label>
+          </fieldset>
+
+          <!-- Toggles -->
+          <fieldset id="toggles-id">
+            <legend><strong>Toggles</strong></legend>
+
+            <input id="toggle1" type="checkbox" icon checked>
+            <i data-lucide="bold" onclick="document.getElementById('toggle1').click()"></i>
+
+            <input id="toggle2" type="checkbox" icon>
+            <i data-lucide="italic" onclick="document.getElementById('toggle2').click()"></i>
+          </fieldset>
+
+          <!-- Radio buttons -->
+          <fieldset>
+            <legend><strong>Radio buttons</strong></legend>
+            <label for="radio-1">
+              <input type="radio" id="radio-1" name="radio" value="radio-1" checked />
+              Radio button
+            </label>
+            <label for="radio-2">
+              <input type="radio" id="radio-2" name="radio" value="radio-2" />
+              Radio button
+            </label>
+          </fieldset>
+
+          <!-- Switch -->
+          <fieldset>
+            <legend><strong>Switches</strong></legend>
+            <label for="switch-1">
+              <input type="checkbox" id="switch-1" name="switch-1" role="switch" checked />
+              Switch
+            </label>
+            <label for="switch-2">
+              <input type="checkbox" id="switch-2" name="switch-2" role="switch" />
+              Switch
+            </label>
+          </fieldset>
+
+          <!-- Buttons -->
+          <input type="reset" value="Reset" onclick="event.preventDefault()" />
+          <input type="submit" value="Submit" onclick="event.preventDefault()" />
+        </form>
+      </section>
+
+      <hr />
+
+      <section id="input">
+        <h2>Input</h2>
+        <div class="demo-gapped">
+          <!-- Search -->
+          <input type="search" id="search" name="search" placeholder="Search" />
+          <!-- Textarea -->
+          <textarea></textarea>
+          <!-- Text -->
+          <input type="text" id="text" name="text" placeholder="Text" />
+          <!-- Select -->
+          <select name="select" required>
+            <option value="" selected>Select…</option>
+            <option>…</option>
+          </select>
+          <!-- File browser -->
+          <input type="file" id="file" name="file" />
+          <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled />
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="label">
+        <h2>Labels</h2>
+        <label for="checkbox-1">
+          <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
+          Label
+        </label>
+        <label for="checkbox-2">
+          <input type="checkbox" id="checkbox-2" name="checkbox-2" />
+          Another label
+        </label>
+      </section>
+
+      <hr />
+
+      <section id="menubar">
+        <h2>Menubar</h2>
+        TODO
+      </section>
+
+      <hr />
+
+      <section id="navigationmenu">
+        <h2>Navigation Menu</h2>
+        TODO
+      </section>
+
+      <hr />
+
       <section id="progress">
-      <h2>Progress bar</h2>
-      <progress id="progress-1" value="25" max="100"></progress>
-      <progress id="progress-2"></progress>
-    </section>
-    <!-- ./ Progress -->
+        <h2>Progress bar</h2>
+        <progress id="progress-1" value="25" max="100"></progress>
+        <progress id="progress-2"></progress>
+      </section>
 
-    <!-- Loading -->
-    <section id="loading">
-      <h2>Loading</h2>
-      <article aria-busy="true"></article>
-      <button aria-busy="true">Please wait…</button>
-    </section>
-    <!-- ./ Loading -->
+      <hr />
 
+      <section id="radio">
+        <h2>Radio Group</h2>
+
+        <label for="radio-1">
+          <input type="radio" id="radio-1" name="radio" value="radio-1" checked />
+          Radio button
+        </label>
+        <label for="radio-2">
+          <input type="radio" id="radio-2" name="radio" value="radio-2" />
+          Radio button
+        </label>
+      </section>
+
+      <hr />
+
+      <section id="select">
+        <h2>Select</h2>
+        <select>
+          <option value="" selected>Select…</option>
+          <option>option 1</option>
+          <option>option 2</option>
+          <option>option 3</option>
+          <option>option 4</option>
+        </select>
+      </section>
+
+      <hr />
+
+      <section id="separator">
+        <h2>Separator</h2>
+        <p>
+          Radix Primitives
+          An open-source UI component library.
+        </p>
+        <hr />
+        <div style="display: flex;">
+          <a href="#">Blog</a>
+          <hr vertical />
+          <a href="#">Docs</a>
+          <hr vertical />
+          <a href="#">Source</a>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="slider">
+        <h2>Slider</h2>
+
+        <input type="range" min="0" max="100" value="50" id="range" name="range" />
+      </section>
+
+      <hr />
+
+      <section id="table">
+        <h2>Table</h2>
+        <table style="width: 100%;">
+          <caption>
+            Table caption
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Person</th>
+              <th scope="col">Most interest in</th>
+              <th scope="col">Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Chris</th>
+              <td>HTML tables</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td scope="row">Dennis</th>
+              <td>Web accessibility</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <td scope="row">Sarah</th>
+              <td>JavaScript frameworks</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <td scope="row">Karen</th>
+              <td>Web performance</td>
+              <td>36</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2">Average age</th>
+              <td>33</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <hr />
+
+      <section id="textarea">
+        <h2>Textarea</h2>
+
+        <textarea></textarea>
+      </section>
+
+      <hr />
+
+      <section id="toggle">
+        <h2>Toggle</h2>
+
+        <input id="toggle4" type="checkbox" icon checked>
+        <i data-lucide="bold" onclick="document.getElementById('toggle4').click()"></i>
+
+        <input id="toggle5" type="checkbox" icon>
+        <i data-lucide="italic" onclick="document.getElementById('toggle5').click()"></i>
+      </section>
+
+      <hr />
+
+
+      <!-- Group -->
+      <section id="group">
+        <h2>Group</h2>
+        <form>
+          <fieldset role="group">
+            <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+            <input type="submit" value="Subscribe" />
+          </fieldset>
+        </form>
+      </section>
+      <!-- ./ Group -->
 
       <!-- Loading -->
-      <section id="separator">
-      <h2>Separator</h2>
-      <p>
-        Radix Primitives
-        An open-source UI component library.
-      </p>
-        <hr/>
-      <div style="display: flex;">
-        <a href="#">Blog</a>
-          <hr vertical/>
-        <a href="#">Docs</a>
-          <hr vertical/>
-        <a href="#">Source</a>
-      </div>
-    </section>
+      <section id="loading">
+        <h2>Loading</h2>
+        <article aria-busy="true"></article>
+        <button aria-busy="true">Please wait…</button>
+      </section>
       <!-- ./ Loading -->
 
-  </main>
-  <!-- ./ Main -->
 
-  <!-- Footer -->
-  <footer>
-    <small>
-      Inspired by <a href="https://ui.shadcn.com/">shadcn/ui</a> and
-      <a href="https://picocss.com">Pico</a>
-    </small>
-  </footer>
-  <!-- ./ Footer -->
+      <!-- Footer -->
+      <footer>
+        <small>
+          Inspired by <a href="https://ui.shadcn.com/">shadcn/ui</a> and
+          <a href="https://picocss.com">Pico</a>
+        </small>
+      </footer>
+      <!-- ./ Footer -->
+
+
+    </main>
+
+  </div>
 
   <script src="js/theme-switcher.js"></script>
   <script src="js/lucide.min.js"></script>
   <script>
     lucide.createIcons();
   </script>
+
 </body>
+
 </html>
