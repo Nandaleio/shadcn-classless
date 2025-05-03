@@ -64,9 +64,16 @@ body {
         align-items: flex-start;
         gap: 1rem;
     }
+
+    .demo-skeleton-gap{
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+    }
 }
 
 main {
     padding: 2rem;
     overflow-y: auto;
+    border-right: 1px solid var(--border);
 }

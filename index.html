@@ -63,7 +63,7 @@
       <a href="#separator">Separator</a>
       <a disabled href="#">Sheet</a>
       <a disabled href="#">Sidebar</a>
-      <a disabled href="#">Skeleton</a>
+      <a href="#skeleton">Skeleton</a>
       <a href="#slider">Slider</a>
       <a disabled href="#">Sonner</a>
       <a disabled href="#">Switch</a>
@@ -239,7 +239,12 @@
 
       <section id="breadcrumb">
         <h2>Breadcrumb</h2>
-        TODO
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">...</a>
+          <a href="#">Components</a>
+          <a href="#">Breadcrumb</a>
+        </nav>
       </section>
 
       <hr />
@@ -249,7 +254,7 @@
         <button>primary</button>
         <input type="submit" value="outline">
         <input type="button" value="ghost">
-        <input type="reset" value="reset">
+        <input type="reset" value="destructive">
       </section>
 
       <hr />
@@ -537,6 +542,20 @@
           <a href="#">Docs</a>
           <hr vertical />
           <a href="#">Source</a>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="skeleton">
+        <h2>Skeleton</h2>
+        <div class="demo-skeleton-gap">
+          <div skeleton style="width: 5rem; height: 5rem; border-radius: 50%;"></div>
+          <div skeleton style="width: 100%; height: 3rem;">
+            <p>This should NOT be display</p>
+          </div>
+          <div skeleton style="width: 80%; height: 1rem;"></div>
+          <div skeleton style="width: 75%; height: 1rem;"></div>
         </div>
       </section>
 

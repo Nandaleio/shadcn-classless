@@ -507,3 +507,42 @@ hr[vertical] {
   height: 1.25rem;
   margin: 0 1rem;
 }
+
+/** Navigation */
+nav {
+  &>a {
+    padding: 0 .625rem 0 0;
+    color: var(--muted-foreground);
+    pointer-events: auto;
+    &::after {
+      content: '>';
+      padding: 0 0 0 .625rem;
+    }
+    &:last-child {
+      color: var(--foreground);
+      &::after {
+        content: '';
+      }
+    }
+  } 
+}
+
+/** Skeleton */
+div[skeleton] {
+  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius);
+  * {
+    display: none;
+  }
+  
+}
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
