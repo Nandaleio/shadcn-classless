@@ -32,6 +32,9 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+
+  --shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 
+            0px 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .dark-mode {
@@ -310,6 +313,7 @@ article {
   border-radius: var(--radius);
   padding: 1rem;
   margin-bottom: 1rem;
+  box-shadow: var(--shadow);
 }
 footer {
   margin-top: 2rem;
@@ -332,6 +336,7 @@ footer {
 input[type='file']::file-selector-button {
   border: none;
   background-color: var(--background);
+  color: var(--foreground);
   font-weight: 600;
 }
 
@@ -504,7 +509,7 @@ hr {
 
 hr[vertical] {
   width: 1px;
-  height: 1.25rem;
+  height: auto;
   margin: 0 1rem;
 }
 
@@ -545,4 +550,54 @@ div[skeleton] {
   100% {
     background-position: -100% 0;
   }
+}
+
+/** Popover */
+[popover] {
+  inset: unset;
+  position: absolute;
+
+  bottom: calc(anchor(top) + 5px);
+  justify-self: anchor-center;
+  margin: 0;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+
+  box-shadow: var(--shadow);                  
+}
+
+/** Tooltip */
+[tooltip] { 
+  anchor-name: --anchor-tooltip;
+}
+
+[tooltip]::after {
+  content: attr(tooltip);
+  position: absolute;
+  margin: 0.2rem;
+  white-space: nowrap;
+
+  position-anchor: --anchor-tooltip;
+  bottom: calc(anchor(top) + 0.5rem);
+  left: anchor(center);
+  transform: translate(-50%);
+
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 0.875em;
+  border-radius: var(--radius);
+  
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+[tooltip]:hover::after {
+  opacity: 1;
 }
