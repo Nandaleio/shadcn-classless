@@ -51,6 +51,7 @@ body {
             background-color: transparent;
             &:hover{
                 background-color: var(--muted);
+                text-decoration: none;
             }
         }
         a[disabled] {
@@ -79,6 +80,21 @@ body {
             display: flex;
             flex-direction: column;
             gap: 0.7rem;
+
+            .demo-skeleton-inline {
+                display: flex;
+                flex-direction: row;
+
+                .demo-skeleton-stack {
+                    width: 100%;
+                    display: flex
+;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    padding: 0 1rem;
+                    justify-content: center;
+                }
+            }
         }
 
         .demo-popover-content {

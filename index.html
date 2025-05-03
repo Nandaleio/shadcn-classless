@@ -31,7 +31,7 @@
       <a disabled href="#">Alert</a>
       <a disabled href="#">Alert Dialog</a>
       <a disabled href="#">Aspect Ratio</a>
-      <a disabled href="#">Avatar</a>
+      <a href="#avatar">Avatar</a>
       <a href="#badge">Badge</a>
       <a href="#breadcrumb">Breadcrumb</a>
       <a href="#button">Button</a>
@@ -50,10 +50,12 @@
       <a href="#drawer">Drawer</a>
       <a disabled href="#">Dropdown Menu</a>
       <a href="#form">Form</a>
+      <a href="#group">Group</a>
       <a disabled href="#">Hover Card</a>
       <a href="#input">Input</a>
       <a disabled href="#">Input OTP</a>
       <a href="#label">Label</a>
+      <a href="#loading">Loading</a>      
       <a href="#menubar">Menubar</a>
       <a href="#navigationmenu">Navigation Menu</a>
       <a disabled href="#">Pagination</a>
@@ -100,7 +102,12 @@
       <section id="installation">
         <h2>Installation</h2>
         <p>
-          TODO
+          Simply add the css file to your HTML page as so:
+          <pre><code>&lt;link rel="stylesheet" href="css/shadcn-classless-min.css"/></code></pre>
+        </p>
+        <p>
+          *Note that in some of the following components we use icons. <br/>
+          These icons come from lucid icon pack and are not shipped in the distribution.
         </p>
       </section>
 
@@ -245,6 +252,14 @@
             <li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
           </ul>
         </details>
+      </section>
+
+      <hr />
+
+      <section id="avatar">
+        <h2>Avatar</h2>
+
+        <img src="https://picsum.photos/50" alt="avatar" avatar>
       </section>
 
       <hr />
@@ -422,10 +437,10 @@
             <legend><strong>Toggles</strong></legend>
 
             <input id="toggle1" type="checkbox" icon checked>
-            <i data-lucide="bold" onclick="document.getElementById('toggle1').click()"></i>
+            <i data-lucide="bold" onclick="toggle1.click()"></i>
 
             <input id="toggle2" type="checkbox" icon>
-            <i data-lucide="italic" onclick="document.getElementById('toggle2').click()"></i>
+            <i data-lucide="italic" onclick="toggle2.click()"></i>
           </fieldset>
 
           <!-- Radio buttons -->
@@ -441,22 +456,21 @@
             </label>
           </fieldset>
 
-          <!-- Switch -->
-          <fieldset>
-            <legend><strong>Switches</strong></legend>
-            <label for="switch-1">
-              <input type="checkbox" id="switch-1" name="switch-1" role="switch" checked />
-              Switch
-            </label>
-            <label for="switch-2">
-              <input type="checkbox" id="switch-2" name="switch-2" role="switch" />
-              Switch
-            </label>
-          </fieldset>
-
           <!-- Buttons -->
           <input type="reset" value="Reset" onclick="event.preventDefault()" />
           <input type="submit" value="Submit" onclick="event.preventDefault()" />
+        </form>
+      </section>
+
+      <hr />
+
+      <section id="group">
+        <h2>Group</h2>
+        <form>
+          <fieldset role="group">
+            <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+            <input type="submit" value="Subscribe" />
+          </fieldset>
         </form>
       </section>
 
@@ -494,6 +508,14 @@
           <input type="checkbox" id="checkbox-2" name="checkbox-2" />
           Another label
         </label>
+      </section>
+
+      <hr />
+
+      <section id="loading">
+        <h2>Loading</h2>
+        <article aria-busy="true"></article>
+        <button aria-busy="true">Please wait…</button>
       </section>
 
       <hr />
@@ -605,12 +627,16 @@
       <section id="skeleton">
         <h2>Skeleton</h2>
         <div class="demo-skeleton-gap">
-          <div skeleton style="width: 5rem; height: 5rem; border-radius: 50%;"></div>
+          <div class="demo-skeleton-inline">
+            <div skeleton style="width: 3rem; height: 3rem; border-radius: 50%;"></div>
+            <div class="demo-skeleton-stack">
+              <div skeleton style="width: 100%; height: 1rem;"></div>
+              <div skeleton style="width: 75%; height: 1rem;"></div>
+            </div>
+          </div>
           <div skeleton style="width: 100%; height: 3rem;">
             <p>This should NOT be displayed</p>
           </div>
-          <div skeleton style="width: 80%; height: 1rem;"></div>
-          <div skeleton style="width: 75%; height: 1rem;"></div>
         </div>
       </section>
 
@@ -699,27 +725,6 @@
       </section>
 
       <hr />
-
-      <!-- Group -->
-      <section id="group">
-        <h2>Group</h2>
-        <form>
-          <fieldset role="group">
-            <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
-            <input type="submit" value="Subscribe" />
-          </fieldset>
-        </form>
-      </section>
-      <!-- ./ Group -->
-
-      <!-- Loading -->
-      <section id="loading">
-        <h2>Loading</h2>
-        <article aria-busy="true"></article>
-        <button aria-busy="true">Please wait…</button>
-      </section>
-      <!-- ./ Loading -->
-
 
       <!-- Footer -->
       <footer>
