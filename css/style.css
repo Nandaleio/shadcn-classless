@@ -80,7 +80,7 @@ body {
 *,
 ::after,
 ::before {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 * {
   margin: 0;
@@ -392,6 +392,7 @@ input[type="checkbox"][icon] {
     cursor: pointer;
     border-radius: var(--radius);
     padding: 0.5rem;
+    box-sizing: border-box;
 
     &:hover {
       background-color: var(--border);
@@ -479,6 +480,42 @@ dialog[drawer] {
 dialog > header {
   margin: 0;
 }
+/** Sheet */
+dialog[sheet-top],
+dialog[sheet-bottom],
+dialog[sheet-left],
+dialog[sheet-right] {
+  border-radius: 0;
+  margin: 0;
+}
+
+dialog[sheet-top],
+dialog[sheet-bottom] {
+  width: 100vw;
+  max-height: 50vh;
+}
+
+dialog[sheet-left],
+dialog[sheet-right] {
+  height: 100vh;
+  max-width: 50vw;
+}
+
+dialog[sheet-top][open] { animation: slidedown 0.2s ease-in forwards; }
+
+dialog[sheet-bottom][open] { 
+  animation: slideup 0.2s ease-in forwards; 
+  top: auto;
+  bottom: 0;
+}
+dialog[sheet-left][open] { animation: slideright 0.2s ease-in forwards; }
+
+dialog[sheet-right][open] { 
+  animation: slideleft 0.2s ease-in forwards;
+  left: auto;
+  right: 0;
+}
+
 @keyframes slideup {
   0% {
     transform: translateY(100%);
@@ -487,7 +524,33 @@ dialog > header {
     transform: translateY(0);
   }
 }
+@keyframes slidedown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideleft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideright {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
+
+/** Progress */
 progress {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -632,3 +695,5 @@ div[skeleton] {
 [tooltip]:hover::after {
   opacity: 1;
 } */
+
+

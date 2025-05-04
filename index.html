@@ -5,25 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Class-less preview • shadcn-inspired CSS</title>
-  <meta
-    name="description"
-    content="A class-less example inspired by shadcn components."
-  />
+  <meta name="description" content="A class-less example inspired by shadcn components." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/x-icon" href="https://jidef.github.io/favicon/favicon.ico">
-  <link rel="stylesheet" href="css/demo-style.css"/>
+  <link rel="stylesheet" href="css/demo-style.css" />
 </head>
 
 <body>
   <div class="demo-container">
     <div class="demo-sidenav">
       Getting started
-      
+
       <a href="#introdution">Introdution</a>
       <a href="#installation">Installation</a>
       <a href="#preview">Preview</a>
       <a href="#typography">Typography</a>
-      
+
       <hr>
 
       Components
@@ -55,7 +52,7 @@
       <a href="#input">Input</a>
       <a disabled href="#">Input OTP</a>
       <a href="#label">Label</a>
-      <a href="#loading">Loading</a>      
+      <a href="#loading">Loading</a>
       <a href="#menubar">Menubar</a>
       <a href="#navigationmenu">Navigation Menu</a>
       <a disabled href="#">Pagination</a>
@@ -92,22 +89,22 @@
         <button onclick="toggleDarkMode()">Toggle theme</button>
 
         <p class="demo-intro-text">
-          Please not that not all shadcn component nor feature can be implemented only with CSS. <br/>
+          Please note that not all shadcn components nor features can be implemented only with CSS. <br />
           We try our best to get as close as possible to what it has to offer.
         </p>
       </section>
 
       <hr>
-      
+
       <section id="installation">
         <h2>Installation</h2>
         <p>
-          Simply add the css file to your HTML page as so:
-          <pre><code>&lt;link rel="stylesheet" href="css/shadcn-classless-min.css"/></code></pre>
+          Simply add the CSS file to your HTML page as so:
+        <pre><code>&lt;link rel="stylesheet" href="css/shadcn-classless-min.css"/></code></pre>
         </p>
         <p>
-          *Note that in some of the following components we use icons. <br/>
-          These icons come from lucid icon pack and are not shipped in the distribution.
+          *Note that in some of the following components, we use icons. <br/>
+          These icons come from Lucid icon pack and are not shipped in the distribution.
         </p>
       </section>
 
@@ -549,29 +546,29 @@
 
         <input type="submit" value="Open more complex popover" popovertarget="popover2">
         <div popover id="popover2">
-              <h3>Dimensions</h3>
-              <small>Set the dimensions for the layer.</small>
-              <div class="demo-popover-content">
-                <span>
-                  <label for="demo-width">Width</label>
-                  <input type="text" id="demo-width" name="demo-width" value="100%" />
-                </span>
-                
-                <span>
-                  <label for="demo-max-width">Max. width</label>
-                  <input type="text" id="demo-max-width" name="demo-max-width" value="300px" />
-                </span>
-                
-                <span>
-                  <label for="demo-height">Height</label>
-                  <input type="text" id="demo-height" name="demo-width" value="25px" />
-                </span>
-                
-                <span>
-                  <label for="demo-max-height">Max. height</label>
-                  <input type="text" id="demo-max-height" name="demo-max-width" value="none" />
-                </span>
-              </div>
+          <h3>Dimensions</h3>
+          <small>Set the dimensions for the layer.</small>
+          <div class="demo-popover-content">
+            <span>
+              <label for="demo-width">Width</label>
+              <input type="text" id="demo-width" name="demo-width" value="100%" />
+            </span>
+
+            <span>
+              <label for="demo-max-width">Max. width</label>
+              <input type="text" id="demo-max-width" name="demo-max-width" value="300px" />
+            </span>
+
+            <span>
+              <label for="demo-height">Height</label>
+              <input type="text" id="demo-height" name="demo-width" value="25px" />
+            </span>
+
+            <span>
+              <label for="demo-max-height">Max. height</label>
+              <input type="text" id="demo-max-height" name="demo-max-width" value="none" />
+            </span>
+          </div>
         </div>
       </section>
 
@@ -633,7 +630,65 @@
 
       <section id="sheet">
         <h2>Sheet</h2>
-        TODO
+
+        <input type="submit" onclick="sheetTop.showModal()" value="Sheet top">
+        <dialog sheet-top id="sheetTop">
+          <header>
+            <h3>Sheet top</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="sheetTop.close()">
+            Close
+          </button>
+        </dialog>
+
+
+        <input type="submit" onclick="sheetBottom.showModal()" value="Sheet bottom">
+        <dialog sheet-bottom id="sheetBottom">
+          <header>
+            <h3>Sheet bottom</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="sheetBottom.close()">
+            Close
+          </button>
+        </dialog>
+
+
+        <input type="submit" onclick="sheetLeft.showModal()" value="Sheet left">
+        <dialog sheet-left id="sheetLeft">
+          <header>
+            <h3>Sheet left</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="sheetLeft.close()">
+            Close
+          </button>
+        </dialog>
+
+
+        <input type="submit" onclick="sheetRight.showModal()" value="Sheet right">
+        <dialog sheet-right id="sheetRight">
+          <header>
+            <h3>Sheet right</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="sheetRight.close()">
+            Close
+          </button>
+        </dialog>
       </section>
 
       <hr />
@@ -741,7 +796,7 @@
         <h2>Tooltip</h2>
 
         <span tooltip="Tooltip content">
-          <input type="submit" value="Hover me" >
+          <input type="submit" value="TODO !">
         </span>
       </section>
 
