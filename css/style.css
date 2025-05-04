@@ -424,12 +424,13 @@ input[type="checkbox"][icon]:checked {
   }
 }
 
-
+/** Badge */
 kbd {
   padding: .125rem .625rem;
   background-color: var(--primary);
   color: var(--primary-foreground);
   border-radius: var(--radius);
+  font-weight: bold;
 }
 
 table {
@@ -696,4 +697,15 @@ div[skeleton] {
   opacity: 1;
 } */
 
+/** Code */
+pre > code {
+  display: block;
+  overflow-x: auto;
+}
+code {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 
+  background-color: var(--muted);
+  padding: 0.2rem;
+}
