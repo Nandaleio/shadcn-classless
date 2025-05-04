@@ -5,36 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Class-less preview • shadcn-inspired CSS</title>
-  <meta
-    name="description"
-    content="A class-less example inspired by shadcn components."
-  />
+  <meta name="description" content="A class-less example inspired by shadcn components." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/x-icon" href="https://jidef.github.io/favicon/favicon.ico">
-  <link rel="stylesheet" href="css/demo-style.css"/>
+  <link rel="stylesheet" href="css/demo-style.css" />
 </head>
 
 <body>
   <div class="demo-container">
     <div class="demo-sidenav">
       Getting started
-      
-      <a href="#introdution">Introdution</a>
-      <a disabled href="#">Installation</a>
 
+      <a href="#introdution">Introdution</a>
+      <a href="#installation">Installation</a>
+      <a href="#preview">Preview</a>
+      <a href="#typography">Typography</a>
+
+      <hr>
 
       Components
       <a href="#accordion">Accordion</a>
       <a disabled href="#">Alert</a>
       <a disabled href="#">Alert Dialog</a>
       <a disabled href="#">Aspect Ratio</a>
-      <a disabled href="#">Avatar</a>
+      <a href="#avatar">Avatar</a>
       <a href="#badge">Badge</a>
       <a href="#breadcrumb">Breadcrumb</a>
       <a href="#button">Button</a>
       <a disabled href="#">Calendar</a>
       <a href="#card">Card</a>
-      <a disabled href="#">Carousel</a>
+      <a href="#carousel">Carousel</a>
       <a disabled href="#">Chart</a>
       <a href="#checkbox">Checkbox</a>
       <a disabled href="#">Collapsible</a>
@@ -47,32 +47,34 @@
       <a href="#drawer">Drawer</a>
       <a disabled href="#">Dropdown Menu</a>
       <a href="#form">Form</a>
+      <a href="#group">Group</a>
       <a disabled href="#">Hover Card</a>
       <a href="#input">Input</a>
       <a disabled href="#">Input OTP</a>
       <a href="#label">Label</a>
+      <a href="#loading">Loading</a>
       <a href="#menubar">Menubar</a>
       <a href="#navigationmenu">Navigation Menu</a>
       <a disabled href="#">Pagination</a>
-      <a disabled href="#">Popover</a>
+      <a href="#popover">Popover</a>
       <a href="#progress">Progress</a>
       <a href="#radio">Radio Group</a>
       <a disabled href="#">Resizable</a>
       <a disabled href="#">Scroll Area</a>
       <a href="#select">Select</a>
       <a href="#separator">Separator</a>
-      <a disabled href="#">Sheet</a>
+      <a href="#sheet">Sheet</a>
       <a disabled href="#">Sidebar</a>
-      <a disabled href="#">Skeleton</a>
+      <a href="#skeleton">Skeleton</a>
       <a href="#slider">Slider</a>
       <a disabled href="#">Sonner</a>
-      <a disabled href="#">Switch</a>
+      <a href="#switch">Switch</a>
       <a href="#table">Table</a>
       <a disabled href="#">Tabs</a>
       <a href="#textarea">Textarea</a>
       <a disabled href="#">Toast</a>
       <a href="#toggle">Toggle</a>
-      <a disabled href="#">Tooltip</a>
+      <a href="#tooltip">Tooltip</a>
 
     </div>
 
@@ -85,7 +87,36 @@
           <p>A class-less example inspired by shadcn components.</p>
         </hgroup>
         <button onclick="toggleDarkMode()">Toggle theme</button>
+
+        <p class="demo-intro-text">
+          Please note that not all shadcn components nor features can be implemented only with CSS. <br />
+          We try our best to get as close as possible to what it has to offer.
+        </p>
       </section>
+
+      <hr>
+
+      <section id="installation">
+        <h2>Installation</h2>
+
+        <p>
+          You can include the framework directly via CDN:
+          <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fordus/shadcn-classless@main/css/style.css"></code></pre>
+        </p>
+        <p>
+          Or download the shadcn-inspired-classless.min.css file from this repository and include it locally:
+          <pre><code>&lt;link rel="stylesheet" href="path/to/shadcn-inspired-classless.min.css"></code></pre>
+        </p>
+        <p>
+          Then, start writing your HTML without worrying about classes!
+        </p>
+        <small>
+          *Note that in some of the following components, we use icons. <br />
+          These icons come from Lucid icon pack and are not shipped in the distribution.
+        </small>
+      </section>
+
+      <hr>
 
       <!-- Preview -->
       <section id="preview">
@@ -230,16 +261,29 @@
 
       <hr />
 
+      <section id="avatar">
+        <h2>Avatar</h2>
+
+        <img src="https://picsum.photos/50" alt="avatar" avatar>
+      </section>
+
+      <hr />
+
       <section id="badge">
         <h2>Badge</h2>
-        <kbd>Kbd</kbd>
+        <kbd>Badge</kbd>
       </section>
 
       <hr />
 
       <section id="breadcrumb">
         <h2>Breadcrumb</h2>
-        TODO
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">...</a>
+          <a href="#">Components</a>
+          <a href="#">Breadcrumb</a>
+        </nav>
       </section>
 
       <hr />
@@ -249,7 +293,7 @@
         <button>primary</button>
         <input type="submit" value="outline">
         <input type="button" value="ghost">
-        <input type="reset" value="reset">
+        <input type="reset" value="destructive">
       </section>
 
       <hr />
@@ -269,6 +313,13 @@
             <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
           </footer>
         </article>
+      </section>
+
+      <hr />
+
+      <section id="carousel">
+        <h2>Carousel</h2>
+        TODO
       </section>
 
       <hr />
@@ -398,41 +449,40 @@
             <legend><strong>Toggles</strong></legend>
 
             <input id="toggle1" type="checkbox" icon checked>
-            <i data-lucide="bold" onclick="document.getElementById('toggle1').click()"></i>
+            <i data-lucide="bold" onclick="toggle1.click()"></i>
 
             <input id="toggle2" type="checkbox" icon>
-            <i data-lucide="italic" onclick="document.getElementById('toggle2').click()"></i>
+            <i data-lucide="italic" onclick="toggle2.click()"></i>
           </fieldset>
 
           <!-- Radio buttons -->
           <fieldset>
             <legend><strong>Radio buttons</strong></legend>
             <label for="radio-1">
-              <input type="radio" id="radio-1" name="radio" value="radio-1" checked />
+              <input type="radio" id="radio-1" name="radio1" value="radio-1" checked />
               Radio button
             </label>
             <label for="radio-2">
-              <input type="radio" id="radio-2" name="radio" value="radio-2" />
+              <input type="radio" id="radio-2" name="radio1" value="radio-2" />
               Radio button
-            </label>
-          </fieldset>
-
-          <!-- Switch -->
-          <fieldset>
-            <legend><strong>Switches</strong></legend>
-            <label for="switch-1">
-              <input type="checkbox" id="switch-1" name="switch-1" role="switch" checked />
-              Switch
-            </label>
-            <label for="switch-2">
-              <input type="checkbox" id="switch-2" name="switch-2" role="switch" />
-              Switch
             </label>
           </fieldset>
 
           <!-- Buttons -->
           <input type="reset" value="Reset" onclick="event.preventDefault()" />
           <input type="submit" value="Submit" onclick="event.preventDefault()" />
+        </form>
+      </section>
+
+      <hr />
+
+      <section id="group">
+        <h2>Group</h2>
+        <form>
+          <fieldset role="group">
+            <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+            <input type="submit" value="Subscribe" />
+          </fieldset>
         </form>
       </section>
 
@@ -474,6 +524,18 @@
 
       <hr />
 
+      <section id="loading">
+        <h2>Loading</h2>
+        <article aria-busy="true" style="text-align: center;"></article>
+        <button aria-busy="true">Please wait…</button>
+        <br/>
+        <small>With spinner:</small>
+        <article aria-busy="spinner" style="text-align: center;"></article>
+        <button aria-busy="spinner">Please wait…</button>
+      </section>
+
+      <hr />
+
       <section id="menubar">
         <h2>Menubar</h2>
         TODO
@@ -484,6 +546,42 @@
       <section id="navigationmenu">
         <h2>Navigation Menu</h2>
         TODO
+      </section>
+
+      <hr />
+
+      <section id="popover">
+        <h2>Popover</h2>
+
+        <input type="submit" value="Open simple popover" popovertarget="popover1">
+        <div popover id="popover1">Simple popover</div>
+
+        <input type="submit" value="Open more complex popover" popovertarget="popover2">
+        <div popover id="popover2">
+          <h3>Dimensions</h3>
+          <small>Set the dimensions for the layer.</small>
+          <div class="demo-popover-content">
+            <span>
+              <label for="demo-width">Width</label>
+              <input type="text" id="demo-width" name="demo-width" value="100%" />
+            </span>
+
+            <span>
+              <label for="demo-max-width">Max. width</label>
+              <input type="text" id="demo-max-width" name="demo-max-width" value="300px" />
+            </span>
+
+            <span>
+              <label for="demo-height">Height</label>
+              <input type="text" id="demo-height" name="demo-width" value="25px" />
+            </span>
+
+            <span>
+              <label for="demo-max-height">Max. height</label>
+              <input type="text" id="demo-max-height" name="demo-max-width" value="none" />
+            </span>
+          </div>
+        </div>
       </section>
 
       <hr />
@@ -499,12 +597,12 @@
       <section id="radio">
         <h2>Radio Group</h2>
 
-        <label for="radio-1">
-          <input type="radio" id="radio-1" name="radio" value="radio-1" checked />
+        <label for="radio-3">
+          <input type="radio" id="radio-3" name="radio2" value="radio-3" checked />
           Radio button
         </label>
-        <label for="radio-2">
-          <input type="radio" id="radio-2" name="radio" value="radio-2" />
+        <label for="radio-4">
+          <input type="radio" id="radio-4" name="radio2" value="radio-4" />
           Radio button
         </label>
       </section>
@@ -542,10 +640,100 @@
 
       <hr />
 
+      <section id="sheet">
+        <h2>Sheet</h2>
+
+        <input type="submit" onclick="sheetTop.showModal()" value="Sheet top">
+        <dialog sheet-top id="sheetTop">
+          <header>
+            <h3>Sheet top</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="sheetTop.close()">
+            Close
+          </button>
+        </dialog>
+
+
+        <input type="submit" onclick="sheetBottom.showModal()" value="Sheet bottom">
+        <dialog sheet-bottom id="sheetBottom">
+          <header>
+            <h3>Sheet bottom</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="sheetBottom.close()">
+            Close
+          </button>
+        </dialog>
+
+
+        <input type="submit" onclick="sheetLeft.showModal()" value="Sheet left">
+        <dialog sheet-left id="sheetLeft">
+          <header>
+            <h3>Sheet left</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="sheetLeft.close()">
+            Close
+          </button>
+        </dialog>
+
+
+        <input type="submit" onclick="sheetRight.showModal()" value="Sheet right">
+        <dialog sheet-right id="sheetRight">
+          <header>
+            <h3>Sheet right</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque. Nullam finibus risus non semper euismod.
+          </p>
+          <button aria-label="Close" rel="prev" onclick="sheetRight.close()">
+            Close
+          </button>
+        </dialog>
+      </section>
+
+      <hr />
+
+      <section id="skeleton">
+        <h2>Skeleton</h2>
+        <div class="demo-skeleton-gap">
+          <div class="demo-skeleton-inline">
+            <div skeleton style="width: 3rem; height: 3rem; border-radius: 50%;"></div>
+            <div class="demo-skeleton-stack">
+              <div skeleton style="width: 100%; height: 1rem;"></div>
+              <div skeleton style="width: 75%; height: 1rem;"></div>
+            </div>
+          </div>
+          <div skeleton style="width: 100%; height: 3rem;">
+            <p>This should NOT be displayed</p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
       <section id="slider">
         <h2>Slider</h2>
 
         <input type="range" min="0" max="100" value="50" id="range" name="range" />
+      </section>
+
+      <hr />
+
+      <section id="switch">
+        <h2>Switch</h2>
+        TODO
       </section>
 
       <hr />
@@ -616,27 +804,28 @@
 
       <hr />
 
+      <section id="tooltip">
+        <h2>Tooltip</h2>
 
-      <!-- Group -->
-      <section id="group">
-        <h2>Group</h2>
-        <form>
-          <fieldset role="group">
-            <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
-            <input type="submit" value="Subscribe" />
-          </fieldset>
-        </form>
+        <span tooltip-top="Tooltip content">
+          <input type="submit" value="Tooltip top">
+        </span>
+
+        <span tooltip-bottom="Tooltip content">
+          <input type="submit" value="Tooltip bottom">
+        </span>
+        
+        <span tooltip-left="Tooltip content">
+          <input type="submit" value="Tooltip left">
+        </span>
+        
+        <span tooltip-right="Tooltip content">
+          <input type="submit" value="Tooltip right">
+        </span>
+
       </section>
-      <!-- ./ Group -->
 
-      <!-- Loading -->
-      <section id="loading">
-        <h2>Loading</h2>
-        <article aria-busy="true"></article>
-        <button aria-busy="true">Please wait…</button>
-      </section>
-      <!-- ./ Loading -->
-
+      <hr />
 
       <!-- Footer -->
       <footer>
