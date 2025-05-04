@@ -526,8 +526,12 @@
 
       <section id="loading">
         <h2>Loading</h2>
-        <article aria-busy="true"></article>
+        <article aria-busy="true" style="text-align: center;"></article>
         <button aria-busy="true">Please wait…</button>
+        <br/>
+        <small>With spinner:</small>
+        <article aria-busy="spinner" style="text-align: center;"></article>
+        <button aria-busy="spinner">Please wait…</button>
       </section>
 
       <hr />
@@ -803,9 +807,22 @@
       <section id="tooltip">
         <h2>Tooltip</h2>
 
-        <span tooltip="Tooltip content">
-          <input type="submit" value="TODO !">
+        <span tooltip-top="Tooltip content">
+          <input type="submit" value="Tooltip top">
         </span>
+
+        <span tooltip-bottom="Tooltip content">
+          <input type="submit" value="Tooltip bottom">
+        </span>
+        
+        <span tooltip-left="Tooltip content">
+          <input type="submit" value="Tooltip left">
+        </span>
+        
+        <span tooltip-right="Tooltip content">
+          <input type="submit" value="Tooltip right">
+        </span>
+
       </section>
 
       <hr />

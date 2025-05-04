@@ -140,7 +140,7 @@ h6 {
 }
 
 p {
-  margin-bottom: 1em;
+  margin: 1em 0;
 }
 a {
   color: var(--primary);
@@ -353,10 +353,14 @@ footer {
 [aria-busy='true'] {
   opacity: 0.7;
   cursor: progress;
-
-  /* background-image: var(--loading-icon-url);
-  background-size: 2em auto;
-  background-repeat: no-repeat; */
+}
+[aria-busy="spinner"]{
+  opacity: 0.7;
+  cursor: progress;
+  &::before {
+    content: var(--loading-icon-url);
+    padding-right: 1rem;
+  }
 }
 @media (max-width: 600px) {
   body {
@@ -664,38 +668,62 @@ div[skeleton] {
 }
 
 /** Tooltip */
-/* [tooltip] { 
-  anchor-name: --anchor-tooltip;
-}
+[tooltip-top], 
+[tooltip-bottom], 
+[tooltip-left], 
+[tooltip-right] { 
+  position: relative;
 
-[tooltip]::after {
-  content: attr(tooltip);
-  position: absolute;
-  margin: 0.2rem;
-  white-space: nowrap;
+  &::after {
+    position: absolute;
+    white-space: nowrap;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
 
-  position-anchor: --anchor-tooltip;
-  bottom: calc(anchor(top) + 0.5rem);
-  left: anchor(center);
-  transform: translate(-50%);
-
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-
-  padding: 6px 8px;
-  border-radius: 4px;
-  font-size: 0.875em;
-  border-radius: var(--radius);
+    padding: 6px 8px;
+    font-size: 0.875em;
+    border-radius: var(--radius);
+    
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
   
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  z-index: 10;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 }
 
-[tooltip]:hover::after {
-  opacity: 1;
-} */
+[tooltip-top]::after {
+  content: attr(tooltip-top);
+  left:50%;
+  top: -.8rem;
+  transform: translateX(-50%)   translateY(-100%);
+}
+[tooltip-bottom]::after {
+  content: attr(tooltip-bottom);
+  left:50%;
+  top: calc(100% + 0.8rem);
+  transform: translateX(-50%) translateY(0%);
+}
+[tooltip-left]::after {
+  content: attr(tooltip-left);
+  left: -0.3rem;
+  top:50%;
+  transform: translateX(-100%)   translateY(-50%);
+}
+[tooltip-right]::after {
+  content: attr(tooltip-right);
+  left: calc(100% + 0.3rem);
+  top:50%;
+  margin-left:0.3rem;
+  transform: translateX(0%)   translateY(-50%);
+}
+
+
+
 
 /** Code */
 pre > code {
@@ -706,6 +734,7 @@ code {
   border: 1px solid var(--border);
   border-radius: var(--radius);
 
-  background-color: var(--muted);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
   padding: 0.2rem;
 }
