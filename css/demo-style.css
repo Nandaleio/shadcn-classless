@@ -1,7 +1,17 @@
 @import url('./shadcn-classless.css');
 
+:root{
+    --body-margin: 0 12rem;
+    --sidenav-display: flex;
+}
+@media (max-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    :root{
+        --body-margin: 0 0;
+        --sidenav-display: none;
+    }
+}
 body {    
-    margin: 0 12rem;
+    margin: var(--body-margin);
     padding: 0;
 
     height: 100vh;
@@ -29,7 +39,7 @@ body {
         border-left: 1px solid var(--border);
         border-right: 1px solid var(--border);
 
-        display: flex;
+        display: var(--sidenav-display);
 ;
         flex-direction: column;
         padding: 1rem 0.5rem 0 1rem;
