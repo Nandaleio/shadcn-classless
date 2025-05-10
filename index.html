@@ -67,12 +67,12 @@
       <a disabled href="#">Sidebar</a>
       <a href="#skeleton">Skeleton</a>
       <a href="#slider">Slider</a>
-      <a disabled href="#">Sonner</a>
+      <a href="#sonner">Sonner</a>
       <a href="#switch">Switch</a>
       <a href="#table">Table</a>
       <a disabled href="#">Tabs</a>
       <a href="#textarea">Textarea</a>
-      <a disabled href="#">Toast</a>
+      <a href="#toast">Toast</a>
       <a href="#toggle">Toggle</a>
       <a href="#tooltip">Tooltip</a>
 
@@ -538,14 +538,27 @@
 
       <section id="menubar">
         <h2>Menubar</h2>
-        TODO
+
+        <nav>
+          <ul>
+            <li>File</li>
+            <li>Edit</li>
+            <li>View</li>
+            <li>Profiles</li>
+          </ul>
+        </nav>
       </section>
 
       <hr />
 
       <section id="navigationmenu">
         <h2>Navigation Menu</h2>
-        TODO
+        
+        <nav>
+          <input type="button" value="Getting started">
+          <input type="button" value="Components">
+          <input type="button" value="Documentation">
+        </nav>
       </section>
 
       <hr />
@@ -731,6 +744,32 @@
 
       <hr />
 
+      <section id="sonner">
+        <h2>Sonner</h2>
+
+        <li id="sonnerLiExample" hidden>
+          <div class="demo-toast">
+            <div>
+              <h6>Scheduled: Catch up</h6>
+              <small>Friday, February 10, 2023 at 5:57 PM</small>
+            </div>
+            <button>Undo</button>
+          </div>
+        </li>
+        <input type="submit" value="Add to calendar" onclick="
+          sonnerDialog.open = true;
+          let li = document.getElementById('sonnerLiExample').cloneNode(true);
+          li.hidden = false;
+          sonnerDialog.appendChild(li);
+          setTimeout(() => li.remove(), 5000);
+        ">
+        <dialog id="sonnerDialog" sonner>
+
+        </dialog>
+      </section>
+
+      <hr />
+
       <section id="switch">
         <h2>Switch</h2>
         TODO
@@ -788,6 +827,24 @@
         <h2>Textarea</h2>
 
         <textarea></textarea>
+      </section>
+
+      <hr />
+
+      <section id="toast">
+        <h2>Toast</h2>
+
+        <input type="submit" value="Add to calendar" onclick="toastDialog.close(); toastDialog.open = true">
+
+        <dialog id="toastDialog" toast>
+          <div class="demo-toast">
+            <div>
+              <h6>Scheduled: Catch up</h6>
+              <small>Friday, February 10, 2023 at 5:57 PM</small>
+            </div>
+            <input type="submit" value="Undo" onclick="toastDialog.close()">
+          </div>
+        </dialog>
       </section>
 
       <hr />

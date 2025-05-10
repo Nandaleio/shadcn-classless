@@ -722,9 +722,6 @@ div[skeleton] {
   transform: translateX(0%)   translateY(-50%);
 }
 
-
-
-
 /** Code */
 pre > code {
   display: block;
@@ -737,4 +734,70 @@ code {
   background-color: var(--primary);
   color: var(--primary-foreground);
   padding: 0.2rem;
+}
+
+/** Toast */
+dialog[sonner],
+dialog[toast] {
+
+  padding: 1rem;
+  padding-right: 1.5rem;
+
+  top: auto;
+  bottom: 1rem;
+  left: auto;
+  right: 1rem;
+
+
+  &::backdrop {
+    opacity: 0;
+  }
+}
+
+dialog[toast] {
+  
+  box-shadow: var(--shadow);
+  
+  &[open] { 
+    animation: slideup 0.2s ease-in forwards; 
+  }
+}
+
+
+dialog[sonner] {
+  background-color: transparent;
+  border: none;
+  counter-reset: sonner-counter 0;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0;
+  transition: gap 0.15s ease-in;
+
+  &:hover {
+    gap: 0.5rem;
+  }
+
+  >li {  
+    animation: 
+    slideup 0.2s ease-in forwards,
+    fad-in 0.2s ease-in forwards; 
+
+    background-color: var(--background);
+    counter-increment: sonner-counter;
+    padding: 1rem;
+    padding-right: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    list-style:none;
+    margin-top: - counter(sonner-counter)rem;
+  }
+}
+
+@keyframes fad-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

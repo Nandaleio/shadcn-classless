@@ -119,5 +119,12 @@ body {
                 justify-content: space-between;
             }
         }
+
+        .demo-toast {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4rem;
+        }
     }
 }
