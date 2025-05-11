@@ -77,11 +77,6 @@
 body {
   color-scheme: light dark;
 }
-*,
-::after,
-::before {
-  /* box-sizing: border-box; */
-}
 * {
   margin: 0;
   padding: 0;
@@ -268,6 +263,7 @@ input[type="reset"] {
     background-color: color-mix(in srgb, var(--destructive) 90%, transparent);
   }
 }
+fieldset,
 fieldset[role="group"] {
   border: 1px solid var(--border);
   border-radius: var(--radius);
