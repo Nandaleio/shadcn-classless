@@ -494,8 +494,9 @@ dialog[drawer] {
   border-bottom-left-radius: 0;
   top: auto;
   bottom: 0;
-  width: 100vw;
   max-height: 50vh;
+
+  resize: vertical; /** Check if we can set the resize handle position to the top left/right */
 
   &[open] {
     animation: slideup 0.2s ease-in forwards;
