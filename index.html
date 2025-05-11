@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
   <div class="demo-container">
     <div class="demo-sidenav">
       Getting started
@@ -98,14 +99,13 @@
 
       <section id="installation">
         <h2>Installation</h2>
-
         <p>
           You can include the framework directly via CDN:
-          <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fordus/shadcn-classless@main/css/style.css"></code></pre>
+          <div id="installCDN"></div>
         </p>
         <p>
           Or download the shadcn-inspired-classless.min.css file from this repository and include it locally:
-          <pre><code>&lt;link rel="stylesheet" href="path/to/shadcn-inspired-classless.min.css"></code></pre>
+          <div id="installLocal"></div>
         </p>
         <p>
           Then, start writing your HTML without worrying about classes!
@@ -132,7 +132,7 @@
           <button type="submit">Subscribe</button>
           <fieldset>
             <label for="terms">
-              <input type="checkbox" role="switch" id="terms" name="terms" />
+              <input type="checkbox" role="switch" name="terms" />
               I agree to the
               <a href="#" onclick="event.preventDefault()">Privacy Policy</a>
             </label>
@@ -263,7 +263,6 @@
 
       <section id="avatar">
         <h2>Avatar</h2>
-
         <img src="https://picsum.photos/50" alt="avatar" avatar>
       </section>
 
@@ -300,8 +299,7 @@
 
       <section id="card">
         <h2>Card</h2>
-
-        <article id="article">
+        <article>
           <p>
             Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed
             ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
@@ -401,45 +399,45 @@
           </select>
 
           <!-- File browser -->
-          <label for="file">File browser
-            <input type="file" id="file" name="file" />
+          <label>File browser
+            <input type="file" name="file" />
           </label>
 
           <!-- Range slider control -->
-          <label for="range">Range slider
-            <input type="range" min="0" max="100" value="50" id="range" name="range" />
+          <label>Range slider
+            <input type="range" min="0" max="100" value="50" name="range" />
           </label>
 
           <!-- States -->
-          <label for="disabled">
+          <label>
             Disabled
-            <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled />
+            <input type="text" name="disabled" placeholder="Disabled" disabled />
           </label>
 
           <!-- Date-->
-          <label for="date">Date
-            <input type="date" id="date" name="date" />
+          <label>Date
+            <input type="date" name="date" />
           </label>
 
           <!-- Time-->
-          <label for="time">Time
-            <input type="time" id="time" name="time" />
+          <label>Time
+            <input type="time" name="time" />
           </label>
 
           <!-- Color-->
-          <label for="color">Color
-            <input type="color" id="color" name="color" value="#0eaaaa" />
+          <label>Color
+            <input type="color" name="color" value="#0eaaaa" />
           </label>
 
           <!-- Checkboxes -->
           <fieldset>
             <legend><strong>Checkboxes</strong></legend>
-            <label for="checkbox-1">
-              <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
+            <label>
+              <input type="checkbox" name="checkbox-1" checked />
               Checkbox
             </label>
-            <label for="checkbox-2">
-              <input type="checkbox" id="checkbox-2" name="checkbox-2" />
+            <label>
+              <input type="checkbox" name="checkbox-2" />
               Checkbox
             </label>
           </fieldset>
@@ -458,12 +456,12 @@
           <!-- Radio buttons -->
           <fieldset>
             <legend><strong>Radio buttons</strong></legend>
-            <label for="radio-1">
-              <input type="radio" id="radio-1" name="radio1" value="radio-1" checked />
+            <label>
+              <input type="radio" name="radio1" value="radio-1" checked />
               Radio button
             </label>
             <label for="radio-2">
-              <input type="radio" id="radio-2" name="radio1" value="radio-2" />
+              <input type="radio" name="radio1" value="radio-2" />
               Radio button
             </label>
           </fieldset>
@@ -492,19 +490,20 @@
         <h2>Input</h2>
         <div class="demo-gapped">
           <!-- Search -->
-          <input type="search" id="search" name="search" placeholder="Search" />
+          <input type="search" name="search" placeholder="Search" />
           <!-- Textarea -->
           <textarea></textarea>
           <!-- Text -->
-          <input type="text" id="text" name="text" placeholder="Text" />
+          <input type="text" name="text" placeholder="Text" />
           <!-- Select -->
           <select name="select" required>
             <option value="" selected>Select…</option>
             <option>…</option>
           </select>
           <!-- File browser -->
-          <input type="file" id="file" name="file" />
-          <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled />
+          <input type="file" name="file" />
+          <!-- Disabled -->
+          <input type="text" name="disabled" placeholder="Disabled" disabled />
         </div>
       </section>
 
@@ -513,11 +512,11 @@
       <section id="label">
         <h2>Labels</h2>
         <label for="checkbox-1">
-          <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
+          <input type="checkbox" name="checkbox-1" checked />
           Label
         </label>
         <label for="checkbox-2">
-          <input type="checkbox" id="checkbox-2" name="checkbox-2" />
+          <input type="checkbox" name="checkbox-2" />
           Another label
         </label>
       </section>
@@ -538,7 +537,6 @@
 
       <section id="menubar">
         <h2>Menubar</h2>
-
         <nav>
           <ul>
             <li>File</li>
@@ -552,8 +550,7 @@
       <hr />
 
       <section id="navigationmenu">
-        <h2>Navigation Menu</h2>
-        
+        <h2>Navigation Menu</h2>        
         <nav>
           <input type="button" value="Getting started">
           <input type="button" value="Components">
@@ -565,7 +562,6 @@
 
       <section id="popover">
         <h2>Popover</h2>
-
         <input type="submit" value="Open simple popover" popovertarget="popover1">
         <div popover id="popover1">Simple popover</div>
 
@@ -574,25 +570,25 @@
           <h3>Dimensions</h3>
           <small>Set the dimensions for the layer.</small>
           <div class="demo-popover-content">
-            <span>
-              <label for="demo-width">Width</label>
-              <input type="text" id="demo-width" name="demo-width" value="100%" />
-            </span>
+              <label>
+                Width
+                <input type="text" name="demo-width" value="100%" />
+              </label>
 
-            <span>
-              <label for="demo-max-width">Max. width</label>
-              <input type="text" id="demo-max-width" name="demo-max-width" value="300px" />
-            </span>
+              <label>
+                Max. width
+                <input type="text" name="demo-max-width" value="300px" />
+              </label>
 
-            <span>
-              <label for="demo-height">Height</label>
-              <input type="text" id="demo-height" name="demo-width" value="25px" />
-            </span>
+              <label>
+                Height
+                <input type="text" name="demo-width" value="25px" />
+              </label>
 
-            <span>
-              <label for="demo-max-height">Max. height</label>
-              <input type="text" id="demo-max-height" name="demo-max-width" value="none" />
-            </span>
+              <label>
+                Max. height
+                <input type="text" name="demo-max-width" value="none" />
+              </label>
           </div>
         </div>
       </section>
@@ -601,21 +597,20 @@
 
       <section id="progress">
         <h2>Progress bar</h2>
-        <progress id="progress-1" value="25" max="100"></progress>
-        <progress id="progress-2"></progress>
+        <progress value="25" max="100"></progress>
+        <progress></progress>
       </section>
 
       <hr />
 
       <section id="radio">
         <h2>Radio Group</h2>
-
-        <label for="radio-3">
-          <input type="radio" id="radio-3" name="radio2" value="radio-3" checked />
+        <label>
+          <input type="radio" name="radio2" value="radio-3" checked />
           Radio button
         </label>
-        <label for="radio-4">
-          <input type="radio" id="radio-4" name="radio2" value="radio-4" />
+        <label>
+          <input type="radio" name="radio2" value="radio-4" />
           Radio button
         </label>
       </section>
@@ -655,7 +650,6 @@
 
       <section id="sheet">
         <h2>Sheet</h2>
-
         <input type="submit" onclick="sheetTop.showModal()" value="Sheet top">
         <dialog sheet-top id="sheetTop">
           <header>
@@ -738,15 +732,13 @@
 
       <section id="slider">
         <h2>Slider</h2>
-
-        <input type="range" min="0" max="100" value="50" id="range" name="range" />
+        <input type="range" min="0" max="100" value="50" name="range" />
       </section>
 
       <hr />
 
       <section id="sonner">
         <h2>Sonner</h2>
-
         <li id="sonnerLiExample" hidden>
           <div class="demo-toast">
             <div>
@@ -825,7 +817,6 @@
 
       <section id="textarea">
         <h2>Textarea</h2>
-
         <textarea></textarea>
       </section>
 
@@ -833,8 +824,7 @@
 
       <section id="toast">
         <h2>Toast</h2>
-
-        <input type="submit" value="Add to calendar" onclick="toastDialog.close(); toastDialog.open = true">
+        <input type="submit" value="Add to calendar" onclick="toastDialog.open = true">
 
         <dialog id="toastDialog" toast>
           <div class="demo-toast">
@@ -851,19 +841,17 @@
 
       <section id="toggle">
         <h2>Toggle</h2>
-
         <input id="toggle4" type="checkbox" icon checked>
-        <i data-lucide="bold" onclick="document.getElementById('toggle4').click()"></i>
+        <i data-lucide="bold" onclick="toggle4.click()"></i>
 
         <input id="toggle5" type="checkbox" icon>
-        <i data-lucide="italic" onclick="document.getElementById('toggle5').click()"></i>
+        <i data-lucide="italic" onclick="toggle5.click()"></i>
       </section>
 
       <hr />
 
       <section id="tooltip">
         <h2>Tooltip</h2>
-
         <span tooltip-top="Tooltip content">
           <input type="submit" value="Tooltip top">
         </span>
@@ -903,7 +891,7 @@
   <script>
     lucide.createIcons();
   </script>
-
+  <script src="js/shiki.js" type="module"></script>
 </body>
 
 </html>

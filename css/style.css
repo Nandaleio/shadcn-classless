@@ -723,9 +723,12 @@ div[skeleton] {
 }
 
 /** Code */
-pre > code {
-  display: block;
-  overflow-x: auto;
+pre {
+  border-radius: var(--radius);
+  > code {
+    display: block;
+    overflow-x: auto;
+  }
 }
 code {
   border: 1px solid var(--border);
