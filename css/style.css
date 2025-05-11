@@ -80,7 +80,22 @@ body {
 * {
   margin: 0;
   padding: 0;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--background);
