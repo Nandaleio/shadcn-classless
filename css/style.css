@@ -468,8 +468,21 @@ kbd {
   padding: .125rem .625rem;
   background-color: var(--primary);
   color: var(--primary-foreground);
-  border-radius: var(--radius);
+  border-radius: 6px;
   font-weight: bold;
+}
+kbd[secondary] {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+kbd[outline] {
+  background-color: var(--background);
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+kbd[destructive] {
+  background-color: var(--destructive);
+  color: var(--primary-foreground);
 }
 
 table {
