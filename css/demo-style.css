@@ -129,5 +129,10 @@ body {
             align-items: center;
             gap: 4rem;
         }
+
+        .demo-otp {
+            display: flex;
+            align-items: center;
+        }
     }
 }
