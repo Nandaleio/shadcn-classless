@@ -759,7 +759,9 @@ dialog[toast] {
   box-shadow: var(--shadow);
   
   &[open] { 
-    animation: slideup 0.2s ease-in forwards; 
+    animation: 
+    slideup 0.2s ease-in forwards,
+    fad-in 0.2s ease-in forwards; 
   }
 }
 
@@ -767,15 +769,10 @@ dialog[toast] {
 dialog[sonner] {
   background-color: transparent;
   border: none;
-  counter-reset: sonner-counter 0;
   display: flex;
   flex-direction: column-reverse;
-  gap: 0;
+  gap: 0.5rem;
   transition: gap 0.15s ease-in;
-
-  &:hover {
-    gap: 0.5rem;
-  }
 
   >li {  
     animation: 
@@ -789,7 +786,10 @@ dialog[sonner] {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     list-style:none;
-    margin-top: - counter(sonner-counter)rem;
+
+    &:hover {
+      scale: 1.1;
+    }
   }
 }
 
