@@ -65,7 +65,7 @@
       <a href="#select">Select</a>
       <a href="#separator">Separator</a>
       <a href="#sheet">Sheet</a>
-      <a disabled href="#">Sidebar</a>
+      <a href="#sidebar">Sidebar</a>
       <a href="#skeleton">Skeleton</a>
       <a href="#slider">Slider</a>
       <a href="#sonner">Sonner</a>
@@ -80,7 +80,7 @@
     </div>
 
 
-    <main>
+    <main class="demo-main">
 
       <section id="introdution">
         <hgroup>
@@ -735,6 +735,66 @@
             Close
           </button>
         </dialog>
+      </section>
+
+      <hr />
+
+      <section id="sidebar">
+        <h2>Sidebar</h2>
+        <div class="demo-sidenav-container">
+          <aside style="width: 20%;">
+
+            <header>
+              <div class="demo-sidebar-header">
+                <i data-lucide="gallery-vertical-end" fill="none"></i>
+                <span>
+                  <h6 style="margin-bottom: 0;">Acme Inc</h6>
+                  <small>Enterprise</small>
+                </span>
+              </div>
+            </header>
+
+            <main>
+              <small>Platform</small>
+              <div class="demo-sidenav-links">
+                <a href="#">Playground</a>
+                <a href="#">Models</a>
+                <a href="#">Documentation</a>
+                <a href="#">Settings</a>
+              </div>
+
+              <small>Projects</small>
+              <div class="demo-sidenav-links">
+                <a href="#">Design Engineering</a>
+                <a href="#">Sales & Marketing</a>
+                <a href="#">Travel</a>
+                <a href="#">More</a>
+              </div>
+            </main>
+
+            <footer>
+              <div class="demo-sidebar-header">
+                <img src="https://picsum.photos/32" alt="avatar" avatar>
+                <span>
+                  <h6 style="margin-bottom: 0;">Fordus</h6>
+                  <small>& Nadaleio</small>
+                </span>
+              </div>
+            </footer>
+
+          </aside>
+          
+          <div class="demo-sidenav-content">
+            <nav>
+              <a href="#" style="display: flex; align-items: center;"> <i data-lucide="panel-left"></i> </a>
+              <a href="#">Building Your Application</a>
+              <a href="#">Data Fetching</a>
+            </nav>
+
+            <div skeleton style="width: 100%; height: 60%;"></div>
+            <div skeleton style="width: 100%; height: 30%;"></div>
+          </div>
+        </div>
       </section>
 
       <hr />

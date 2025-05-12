@@ -664,8 +664,10 @@ hr[vertical] {
   margin: 0 1rem;
 }
 
-/** Navigation */
+/** Breadcrumbs */
 nav {
+  display: flex;
+  align-items: center;
   &>a {
     padding: 0 .625rem 0 0;
     color: var(--muted-foreground);
@@ -851,5 +853,31 @@ dialog[sonner] {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/** Sidebar */
+aside {
+  background-color: var(--sidebar);
+  border: 1px solid var(--sidebar-border);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+  padding: 0.5rem;
+
+  > main {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  > header,
+  > footer {
+    position: sticky;
+
   }
 }
