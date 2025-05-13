@@ -1,20 +1,30 @@
-@import url('./shadcn-classless.css');
-
+:root{
+    --body-margin: 0 12rem;
+    --sidenav-display: flex;
+}
+@media (max-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    :root{
+        --body-margin: 0 0;
+        --sidenav-display: none;
+    }
+}
 body {    
-    margin: 0 12rem;
+    margin: var(--body-margin);
     padding: 0;
 
     height: 100vh;
     overflow: hidden;
 }
 
-* {
+.demo-sidenav,
+.demo-main {
     scroll-behavior: smooth;
-    ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+    ms-overflow-style: none;
+    scrollbar-width: none;
 }
-*::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+.demo-sidenav::-webkit-scrollbar,
+.demo-main::-webkit-scrollbar { 
+    display: none;
 }
 
 .demo-container {
@@ -29,7 +39,7 @@ body {
         border-left: 1px solid var(--border);
         border-right: 1px solid var(--border);
 
-        display: flex;
+        display: var(--sidenav-display);
 ;
         flex-direction: column;
         padding: 1rem 0.5rem 0 1rem;
@@ -60,13 +70,17 @@ body {
         }
     }
 
-    main {
+    .demo-main {
         padding: 2rem;
         overflow-y: auto;
         border-right: 1px solid var(--border);
 
         .demo-intro-text {
             margin-top: 1rem;
+        }
+
+        .demo-code {
+            margin: 1rem 0;
         }
 
         .demo-gapped {
@@ -103,10 +117,60 @@ body {
             flex-direction: column;
             gap: 0.5rem;
 
-            span {
+            label {
                 display: flex;
                 gap: 1rem;
                 justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .demo-toast {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .demo-otp {
+            display: flex;
+            align-items: center;
+        }
+
+        .demo-sidenav-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 30rem;
+
+            .demo-sidebar-header {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                padding: 0.5rem;
+
+                border-radius: var(--radius);
+                &:hover {
+                    background-color: var(--muted);
+                }
+            }
+
+            .demo-sidenav-content {
+                flex-grow: 1;
+                padding: 0 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+            }
+
+            .demo-sidenav-links {
+                display: flex
+                ;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    margin-bottom: 2rem;
+                    margin-top: 0.5rem;
             }
         }
     }

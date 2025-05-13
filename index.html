@@ -6,12 +6,13 @@
   <meta name="color-scheme" content="light dark" />
   <title>Class-less preview • shadcn-inspired CSS</title>
   <meta name="description" content="A class-less example inspired by shadcn components." />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/shadcn-classless.css" />
   <link rel="icon" type="image/x-icon" href="https://jidef.github.io/favicon/favicon.ico">
   <link rel="stylesheet" href="css/demo-style.css" />
 </head>
 
 <body>
+
   <div class="demo-container">
     <div class="demo-sidenav">
       Getting started
@@ -50,7 +51,7 @@
       <a href="#group">Group</a>
       <a disabled href="#">Hover Card</a>
       <a href="#input">Input</a>
-      <a disabled href="#">Input OTP</a>
+      <a href="#inputotp">Input OTP</a>
       <a href="#label">Label</a>
       <a href="#loading">Loading</a>
       <a href="#menubar">Menubar</a>
@@ -64,22 +65,22 @@
       <a href="#select">Select</a>
       <a href="#separator">Separator</a>
       <a href="#sheet">Sheet</a>
-      <a disabled href="#">Sidebar</a>
+      <a href="#sidebar">Sidebar</a>
       <a href="#skeleton">Skeleton</a>
       <a href="#slider">Slider</a>
-      <a disabled href="#">Sonner</a>
+      <a href="#sonner">Sonner</a>
       <a href="#switch">Switch</a>
       <a href="#table">Table</a>
       <a disabled href="#">Tabs</a>
       <a href="#textarea">Textarea</a>
-      <a disabled href="#">Toast</a>
+      <a href="#toast">Toast</a>
       <a href="#toggle">Toggle</a>
       <a href="#tooltip">Tooltip</a>
 
     </div>
 
 
-    <main>
+    <main class="demo-main">
 
       <section id="introdution">
         <hgroup>
@@ -98,14 +99,13 @@
 
       <section id="installation">
         <h2>Installation</h2>
-
         <p>
           You can include the framework directly via CDN:
-          <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fordus/shadcn-classless@main/css/style.css"></code></pre>
+          <div id="installCDN"></div>
         </p>
         <p>
           Or download the shadcn-inspired-classless.min.css file from this repository and include it locally:
-          <pre><code>&lt;link rel="stylesheet" href="path/to/shadcn-inspired-classless.min.css"></code></pre>
+          <div id="installLocal"></div>
         </p>
         <p>
           Then, start writing your HTML without worrying about classes!
@@ -130,13 +130,11 @@
           <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email"
             required />
           <button type="submit">Subscribe</button>
-          <fieldset>
             <label for="terms">
-              <input type="checkbox" role="switch" id="terms" name="terms" />
+              <input type="checkbox" role="switch" name="terms" />
               I agree to the
               <a href="#" onclick="event.preventDefault()">Privacy Policy</a>
             </label>
-          </fieldset>
         </form>
       </section>
       <!-- ./ Preview -->
@@ -263,7 +261,6 @@
 
       <section id="avatar">
         <h2>Avatar</h2>
-
         <img src="https://picsum.photos/50" alt="avatar" avatar>
       </section>
 
@@ -271,7 +268,10 @@
 
       <section id="badge">
         <h2>Badge</h2>
-        <kbd>Badge</kbd>
+        <kbd>Primary</kbd>
+        <kbd secondary>Secondary</kbd>
+        <kbd outline>Outile</kbd>
+        <kbd destructive>Destructive</kbd>
       </section>
 
       <hr />
@@ -300,8 +300,7 @@
 
       <section id="card">
         <h2>Card</h2>
-
-        <article id="article">
+        <article>
           <p>
             Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed
             ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
@@ -379,67 +378,74 @@
       <section id="form">
         <h2>Form</h2>
         <form>
-
           <!-- Search -->
-          <label for="search">Search</label>
-          <input type="search" id="search" name="search" placeholder="Search" />
+          <label>
+            Search
+            <input type="search" name="search" placeholder="Search" />
+          </label>
 
           <!-- Textarea -->
-          <label for="textarea1">Textarea</label>
-          <textarea name="" id="textarea1"></textarea>
+          <label>
+            Textarea
+            <textarea name=""></textarea>
+          </label>
 
           <!-- Text -->
-          <label for="text">Text</label>
-          <input type="text" id="text" name="text" placeholder="Text" />
+          <label>
+            Text
+            <input type="text" name="text" placeholder="Text" />
+          </label>
           <small>Curabitur consequat lacus at lacus porta finibus.</small>
 
           <!-- Select -->
-          <label for="select1">Select</label>
-          <select id="select1" name="select" required>
-            <option value="" selected>Select…</option>
-            <option>…</option>
-          </select>
+          <label>
+            Select
+            <select id="select1" name="select" required>
+              <option value="" selected>Select…</option>
+              <option>…</option>
+            </select>
+          </label>
 
           <!-- File browser -->
-          <label for="file">File browser
-            <input type="file" id="file" name="file" />
+          <label>File browser
+            <input type="file" name="file" />
           </label>
 
           <!-- Range slider control -->
-          <label for="range">Range slider
-            <input type="range" min="0" max="100" value="50" id="range" name="range" />
+          <label>Range slider
+            <input type="range" min="0" max="100" value="50" name="range" />
           </label>
 
           <!-- States -->
-          <label for="disabled">
+          <label>
             Disabled
-            <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled />
+            <input type="text" name="disabled" placeholder="Disabled" disabled />
           </label>
 
           <!-- Date-->
-          <label for="date">Date
-            <input type="date" id="date" name="date" />
+          <label>Date
+            <input type="date" name="date" />
           </label>
 
           <!-- Time-->
-          <label for="time">Time
-            <input type="time" id="time" name="time" />
+          <label>Time
+            <input type="time" name="time" />
           </label>
 
           <!-- Color-->
-          <label for="color">Color
-            <input type="color" id="color" name="color" value="#0eaaaa" />
+          <label>Color
+            <input type="color" name="color" value="#0eaaaa" />
           </label>
 
           <!-- Checkboxes -->
           <fieldset>
             <legend><strong>Checkboxes</strong></legend>
-            <label for="checkbox-1">
-              <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
+            <label>
+              <input type="checkbox" name="checkbox-1" checked />
               Checkbox
             </label>
-            <label for="checkbox-2">
-              <input type="checkbox" id="checkbox-2" name="checkbox-2" />
+            <label>
+              <input type="checkbox" name="checkbox-2" />
               Checkbox
             </label>
           </fieldset>
@@ -458,12 +464,12 @@
           <!-- Radio buttons -->
           <fieldset>
             <legend><strong>Radio buttons</strong></legend>
-            <label for="radio-1">
-              <input type="radio" id="radio-1" name="radio1" value="radio-1" checked />
+            <label>
+              <input type="radio" name="radio1" value="radio-1" checked />
               Radio button
             </label>
             <label for="radio-2">
-              <input type="radio" id="radio-2" name="radio1" value="radio-2" />
+              <input type="radio" name="radio1" value="radio-2" />
               Radio button
             </label>
           </fieldset>
@@ -492,32 +498,52 @@
         <h2>Input</h2>
         <div class="demo-gapped">
           <!-- Search -->
-          <input type="search" id="search" name="search" placeholder="Search" />
+          <input type="search" name="search" placeholder="Search" />
           <!-- Textarea -->
           <textarea></textarea>
           <!-- Text -->
-          <input type="text" id="text" name="text" placeholder="Text" />
+          <input type="text" name="text" placeholder="Text" />
           <!-- Select -->
           <select name="select" required>
             <option value="" selected>Select…</option>
             <option>…</option>
           </select>
           <!-- File browser -->
-          <input type="file" id="file" name="file" />
-          <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled />
+          <input type="file" name="file" />
+          <!-- Disabled -->
+          <input type="text" name="disabled" placeholder="Disabled" disabled />
         </div>
       </section>
 
       <hr />
 
+      <section id="inputotp">
+        <h2>Input OTP</h2>
+        <div class="demo-otp">
+          <fieldset role="otp">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+          </fieldset>
+          -
+          <fieldset role="otp">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+          </fieldset>
+        </div>
+      </section>
+      
+      <hr />
+
       <section id="label">
         <h2>Labels</h2>
-        <label for="checkbox-1">
-          <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
+        <label>
+          <input type="checkbox" checked/>
           Label
         </label>
-        <label for="checkbox-2">
-          <input type="checkbox" id="checkbox-2" name="checkbox-2" />
+        <label>
+          <input type="checkbox"/>
           Another label
         </label>
       </section>
@@ -538,21 +564,31 @@
 
       <section id="menubar">
         <h2>Menubar</h2>
-        TODO
+        <nav>
+          <ul>
+            <li>File</li>
+            <li>Edit</li>
+            <li>View</li>
+            <li>Profiles</li>
+          </ul>
+        </nav>
       </section>
 
       <hr />
 
       <section id="navigationmenu">
-        <h2>Navigation Menu</h2>
-        TODO
+        <h2>Navigation Menu</h2>        
+        <nav>
+          <input type="button" value="Getting started">
+          <input type="button" value="Components">
+          <input type="button" value="Documentation">
+        </nav>
       </section>
 
       <hr />
 
       <section id="popover">
         <h2>Popover</h2>
-
         <input type="submit" value="Open simple popover" popovertarget="popover1">
         <div popover id="popover1">Simple popover</div>
 
@@ -561,25 +597,25 @@
           <h3>Dimensions</h3>
           <small>Set the dimensions for the layer.</small>
           <div class="demo-popover-content">
-            <span>
-              <label for="demo-width">Width</label>
-              <input type="text" id="demo-width" name="demo-width" value="100%" />
-            </span>
+              <label>
+                Width
+                <input type="text" name="demo-width" value="100%" />
+              </label>
 
-            <span>
-              <label for="demo-max-width">Max. width</label>
-              <input type="text" id="demo-max-width" name="demo-max-width" value="300px" />
-            </span>
+              <label>
+                Max. width
+                <input type="text" name="demo-max-width" value="300px" />
+              </label>
 
-            <span>
-              <label for="demo-height">Height</label>
-              <input type="text" id="demo-height" name="demo-width" value="25px" />
-            </span>
+              <label>
+                Height
+                <input type="text" name="demo-width" value="25px" />
+              </label>
 
-            <span>
-              <label for="demo-max-height">Max. height</label>
-              <input type="text" id="demo-max-height" name="demo-max-width" value="none" />
-            </span>
+              <label>
+                Max. height
+                <input type="text" name="demo-max-width" value="none" />
+              </label>
           </div>
         </div>
       </section>
@@ -588,21 +624,20 @@
 
       <section id="progress">
         <h2>Progress bar</h2>
-        <progress id="progress-1" value="25" max="100"></progress>
-        <progress id="progress-2"></progress>
+        <progress value="25" max="100"></progress>
+        <progress></progress>
       </section>
 
       <hr />
 
       <section id="radio">
         <h2>Radio Group</h2>
-
-        <label for="radio-3">
-          <input type="radio" id="radio-3" name="radio2" value="radio-3" checked />
+        <label>
+          <input type="radio" name="radio2" value="radio-3" checked />
           Radio button
         </label>
-        <label for="radio-4">
-          <input type="radio" id="radio-4" name="radio2" value="radio-4" />
+        <label>
+          <input type="radio" name="radio2" value="radio-4" />
           Radio button
         </label>
       </section>
@@ -642,7 +677,6 @@
 
       <section id="sheet">
         <h2>Sheet</h2>
-
         <input type="submit" onclick="sheetTop.showModal()" value="Sheet top">
         <dialog sheet-top id="sheetTop">
           <header>
@@ -705,6 +739,66 @@
 
       <hr />
 
+      <section id="sidebar">
+        <h2>Sidebar</h2>
+        <div class="demo-sidenav-container">
+          <aside style="width: 20%;">
+
+            <header>
+              <div class="demo-sidebar-header">
+                <i data-lucide="gallery-vertical-end" fill="none"></i>
+                <span>
+                  <h6 style="margin-bottom: 0;">Acme Inc</h6>
+                  <small>Enterprise</small>
+                </span>
+              </div>
+            </header>
+
+            <main>
+              <small>Platform</small>
+              <div class="demo-sidenav-links">
+                <a href="#">Playground</a>
+                <a href="#">Models</a>
+                <a href="#">Documentation</a>
+                <a href="#">Settings</a>
+              </div>
+
+              <small>Projects</small>
+              <div class="demo-sidenav-links">
+                <a href="#">Design Engineering</a>
+                <a href="#">Sales & Marketing</a>
+                <a href="#">Travel</a>
+                <a href="#">More</a>
+              </div>
+            </main>
+
+            <footer>
+              <div class="demo-sidebar-header">
+                <img src="https://picsum.photos/32" alt="avatar" avatar>
+                <span>
+                  <h6 style="margin-bottom: 0;">Fordus</h6>
+                  <small>& Nadaleio</small>
+                </span>
+              </div>
+            </footer>
+
+          </aside>
+          
+          <div class="demo-sidenav-content">
+            <nav>
+              <a href="#" style="display: flex; align-items: center;"> <i data-lucide="panel-left"></i> </a>
+              <a href="#">Building Your Application</a>
+              <a href="#">Data Fetching</a>
+            </nav>
+
+            <div skeleton style="width: 100%; height: 60%;"></div>
+            <div skeleton style="width: 100%; height: 30%;"></div>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
       <section id="skeleton">
         <h2>Skeleton</h2>
         <div class="demo-skeleton-gap">
@@ -725,8 +819,32 @@
 
       <section id="slider">
         <h2>Slider</h2>
+        <input type="range" min="0" max="100" value="50" name="range" />
+      </section>
 
-        <input type="range" min="0" max="100" value="50" id="range" name="range" />
+      <hr />
+
+      <section id="sonner">
+        <h2>Sonner</h2>
+        <li id="sonnerLiExample" hidden>
+          <div class="demo-toast">
+            <div>
+              <h6>Scheduled: Catch up</h6>
+              <small>Friday, February 10, 2023 at 5:57 PM</small>
+            </div>
+            <button>Undo</button>
+          </div>
+        </li>
+        <input type="submit" value="Add toast" onclick="
+          sonnerDialog.open = true;
+          let li = document.getElementById('sonnerLiExample').cloneNode(true);
+          li.hidden = false;
+          sonnerDialog.appendChild(li);
+          setTimeout(() => li.remove(), 5000);
+        ">
+        <dialog id="sonnerDialog" sonner>
+
+        </dialog>
       </section>
 
       <hr />
@@ -786,27 +904,41 @@
 
       <section id="textarea">
         <h2>Textarea</h2>
-
         <textarea></textarea>
+      </section>
+
+      <hr />
+
+      <section id="toast">
+        <h2>Toast</h2>
+        <input type="submit" value="Add to calendar" onclick="toastDialog.open = true">
+
+        <dialog id="toastDialog" toast>
+          <div class="demo-toast">
+            <div>
+              <h6>Scheduled: Catch up</h6>
+              <small>Friday, February 10, 2023 at 5:57 PM</small>
+            </div>
+            <input type="submit" value="Undo" onclick="toastDialog.close()">
+          </div>
+        </dialog>
       </section>
 
       <hr />
 
       <section id="toggle">
         <h2>Toggle</h2>
-
         <input id="toggle4" type="checkbox" icon checked>
-        <i data-lucide="bold" onclick="document.getElementById('toggle4').click()"></i>
+        <i data-lucide="bold" onclick="toggle4.click()"></i>
 
         <input id="toggle5" type="checkbox" icon>
-        <i data-lucide="italic" onclick="document.getElementById('toggle5').click()"></i>
+        <i data-lucide="italic" onclick="toggle5.click()"></i>
       </section>
 
       <hr />
 
       <section id="tooltip">
         <h2>Tooltip</h2>
-
         <span tooltip-top="Tooltip content">
           <input type="submit" value="Tooltip top">
         </span>
@@ -846,7 +978,7 @@
   <script>
     lucide.createIcons();
   </script>
-
+  <script src="js/shiki.mjs" type="module"></script>
 </body>
 
 </html>
