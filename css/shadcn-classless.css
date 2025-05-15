@@ -240,12 +240,18 @@ button {
 /** Primary */
 button {
   border: none;
-  
   background-color: var(--primary);
   color: var(--primary-foreground);
-
   &:hover {
     background-color: color-mix(in srgb, var(--primary) 90%, transparent);
+  }
+}
+/** Secondary */
+button[secondary] {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  &:hover {
+    background-color: color-mix(in srgb, var(--secondary) 90%, transparent);
   }
 }
 
@@ -343,6 +349,9 @@ blockquote {
   border-left: 4px solid var(--border);
   padding-left: 1rem;
   font-style: italic;
+  >footer {
+    text-align: center;
+  }
 }
 [type='checkbox'],
 [type='radio'] {
@@ -382,7 +391,6 @@ article {
 }
 footer {
   margin-top: 2rem;
-  text-align: center;
   color: var(--muted-foreground);
 }
 [aria-busy='true'] {
@@ -665,16 +673,16 @@ hr[vertical] {
 }
 
 /** Breadcrumbs */
-nav {
+nav[breadcrumb] {
   display: flex;
   align-items: center;
-  &>a {
+  >a {
     padding: 0 .625rem 0 0;
     color: var(--muted-foreground);
-    pointer-events: auto;
     &::after {
-      content: '>';
       padding: 0 0 0 .625rem;
+      display: inline-block;
+      content: attr(breadcrumb, '>');
     }
     &:last-child {
       color: var(--foreground);
@@ -682,7 +690,10 @@ nav {
         content: '';
       }
     }
-  } 
+  }
+  &:hover::after {
+        text-decoration: none;
+  }
 }
 
 /** Skeleton */
@@ -880,4 +891,26 @@ aside {
     position: sticky;
 
   }
+}
+
+/** Menubar */
+menu {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: fit-content;
+  >li{
+    padding: 0.25rem 0.75rem;
+    list-style: none;
+  }
+}
+
+/** Scrollarea */
+*[scroll-x]{
+  overflow-x: scroll;
+}
+
+*[scroll-y] {
+  overflow-y: scroll;
 }
