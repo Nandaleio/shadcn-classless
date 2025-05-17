@@ -1,7 +1,11 @@
 import { codeToHtml } from 'https://esm.sh/shiki@3.4.0'
 
 const lang = 'html';
-const theme = 'github-dark';
+const theme = 'github-dark' ;
+// = { 
+//     light: 'github-dark',
+//     dark: 'github-light',
+//}
 
 const ignoreSectionId = ['installation', 'preview', 'typography'];
 

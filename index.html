@@ -87,8 +87,10 @@
           <h1>shadcn-inspired</h1>
           <p>A class-less example inspired by shadcn components.</p>
         </hgroup>
-        <button onclick="toggleDarkMode()">Toggle theme</button>
-
+        <button onclick="
+        document.querySelector('html').setAttribute('data-theme', 
+        document.querySelector('html').getAttribute('data-theme')=='dark'?'light':'dark')">Toggle theme</button>
+  <!-- onclick="toggleDarkMode()" -->
         <p class="demo-intro-text">
           Please note that not all shadcn components nor features can be implemented only with CSS. <br />
           We try our best to get as close as possible to what it has to offer.
@@ -101,11 +103,11 @@
         <h2>Installation</h2>
         <p>
           You can include the framework directly via CDN:
-          <div id="installCDN"></div>
+          <div id="installCDN" class="demo-code"></div>
         </p>
         <p>
           Or download the shadcn-inspired-classless.min.css file from this repository and include it locally:
-          <div id="installLocal"></div>
+          <div id="installLocal" class="demo-code"></div>
         </p>
         <p>
           Then, start writing your HTML without worrying about classes!
@@ -278,19 +280,19 @@
 
       <section id="breadcrumb">
         <h2>Breadcrumb</h2>
-        <nav breadcrumb>
+        <nav>
           <a href="#">Home</a>
           <a href="#">...</a>
           <a href="#">Components</a>
           <a href="#">Breadcrumb</a>
         </nav>
-        <!-- 
+        
         <nav breadcrumb="/" >
           <a href="#">Home</a>
           <a href="#">...</a>
           <a href="#">Components</a>
           <a href="#">Breadcrumb</a>
-        </nav> -->
+        </nav>
 
       </section>
 
@@ -997,8 +999,6 @@
     </main>
 
   </div>
-
-  <script src="js/theme-switcher.js"></script>
   <script src="js/lucide.min.js"></script>
   <script>
     lucide.createIcons();
