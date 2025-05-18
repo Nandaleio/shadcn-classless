@@ -502,12 +502,14 @@
 
       <section id="group">
         <h2>Group</h2>
-        <form>
+          <fieldset>
+            <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+            <input type="submit" value="Subscribe" />
+          </fieldset>
           <fieldset role="group">
             <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
             <input type="submit" value="Subscribe" />
           </fieldset>
-        </form>
       </section>
 
       <hr />
@@ -521,6 +523,8 @@
           <textarea></textarea>
           <!-- Text -->
           <input type="text" name="text" placeholder="Text" />
+          <!-- Password -->
+          <input type="password" name="password" placeholder="Password" />
           <!-- Select -->
           <select name="select" required>
             <option value="" selected>Select…</option>

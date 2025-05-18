@@ -188,6 +188,7 @@ form {
   flex-direction: column;
   gap: 1rem;
 }
+input[type="password"],
 input[type="text"],
 input[type="date"],
 input[type="color"],
@@ -288,12 +289,36 @@ input[type="reset"] {
     background-color: color-mix(in srgb, var(--destructive) 90%, transparent);
   }
 }
-fieldset,
-fieldset[role="group"] {
+
+
+fieldset {
   border: var(--border);
   border-radius: var(--radius);
   padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
 }
+
+fieldset[role="group"] {
+    border: none;
+    padding: 1rem;
+    display: flex;
+    gap: 0;
+  >* {
+    border-radius: 0; 
+    &:first-child {
+      border-top-left-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+      border-right: 0;
+    }
+    &:last-child {
+      border-top-right-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      border-right: var(--border);
+    }
+  }
+}
+
 fieldset[role="otp"] {
   border: none;
   padding: 1rem;
