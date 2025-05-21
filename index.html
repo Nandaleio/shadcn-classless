@@ -36,7 +36,7 @@
       <a disabled href="#">Calendar</a>
       <a href="#card">Card</a>
       <a href="#carousel">Carousel</a>
-      <a disabled href="#">Chart</a>
+      <a href="#chart">Chart</a>
       <a href="#checkbox">Checkbox</a>
       <a disabled href="#">Collapsible</a>
       <a disabled href="#">Combobox</a>
@@ -61,7 +61,7 @@
       <a href="#progress">Progress</a>
       <a href="#radio">Radio Group</a>
       <a disabled href="#">Resizable</a>
-      <a disabled href="#">Scroll Area</a>
+      <a href="#scrollarea">Scroll Area</a>
       <a href="#select">Select</a>
       <a href="#separator">Separator</a>
       <a href="#sheet">Sheet</a>
@@ -87,8 +87,10 @@
           <h1>shadcn-inspired</h1>
           <p>A class-less example inspired by shadcn components.</p>
         </hgroup>
-        <button onclick="toggleDarkMode()">Toggle theme</button>
-
+        <button onclick="
+        document.querySelector('html').setAttribute('data-theme', 
+        document.querySelector('html').getAttribute('data-theme')=='dark'?'light':'dark')">Toggle theme</button>
+  <!-- onclick="toggleDarkMode()" -->
         <p class="demo-intro-text">
           Please note that not all shadcn components nor features can be implemented only with CSS. <br />
           We try our best to get as close as possible to what it has to offer.
@@ -101,11 +103,11 @@
         <h2>Installation</h2>
         <p>
           You can include the framework directly via CDN:
-          <div id="installCDN"></div>
+          <div id="installCDN" class="demo-code"></div>
         </p>
         <p>
           Or download the shadcn-inspired-classless.min.css file from this repository and include it locally:
-          <div id="installLocal"></div>
+          <div id="installLocal" class="demo-code"></div>
         </p>
         <p>
           Then, start writing your HTML without worrying about classes!
@@ -284,6 +286,14 @@
           <a href="#">Components</a>
           <a href="#">Breadcrumb</a>
         </nav>
+        
+        <nav breadcrumb="/" >
+          <a href="#">Home</a>
+          <a href="#">...</a>
+          <a href="#">Components</a>
+          <a href="#">Breadcrumb</a>
+        </nav>
+
       </section>
 
       <hr />
@@ -291,6 +301,7 @@
       <section id="button">
         <h2>Buttons</h2>
         <button>primary</button>
+        <button secondary>secondary</button>
         <input type="submit" value="outline">
         <input type="button" value="ghost">
         <input type="reset" value="destructive">
@@ -318,6 +329,13 @@
 
       <section id="carousel">
         <h2>Carousel</h2>
+        TODO
+      </section>
+
+      <hr />
+
+      <section id="chart">
+        <h2>Chart</h2>
         TODO
       </section>
 
@@ -484,12 +502,14 @@
 
       <section id="group">
         <h2>Group</h2>
-        <form>
+          <fieldset>
+            <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+            <input type="submit" value="Subscribe" />
+          </fieldset>
           <fieldset role="group">
             <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
             <input type="submit" value="Subscribe" />
           </fieldset>
-        </form>
       </section>
 
       <hr />
@@ -503,6 +523,8 @@
           <textarea></textarea>
           <!-- Text -->
           <input type="text" name="text" placeholder="Text" />
+          <!-- Password -->
+          <input type="password" name="password" placeholder="Password" />
           <!-- Select -->
           <select name="select" required>
             <option value="" selected>Select…</option>
@@ -564,14 +586,12 @@
 
       <section id="menubar">
         <h2>Menubar</h2>
-        <nav>
-          <ul>
-            <li>File</li>
-            <li>Edit</li>
-            <li>View</li>
-            <li>Profiles</li>
-          </ul>
-        </nav>
+        <menu>
+          <li>File</li>
+          <li>Edit</li>
+          <li>View</li>
+          <li>Profiles</li>
+        </menu>
       </section>
 
       <hr />
@@ -640,6 +660,18 @@
           <input type="radio" name="radio2" value="radio-4" />
           Radio button
         </label>
+      </section>
+
+      <hr />
+
+      <section id="scrollarea">
+        <h2>Scroll Area</h2>
+
+        <div style="width: 100%;height: 30rem;display: flex;flex-direction: row;gap: 1rem;">
+          <div scroll-x="" style="width: 50%; height: 100%;"><div style="width: 200%;height: 100%;background: var(--accent);"></div></div>
+          <div scroll-y="" style="width: 50%;"><div style="height: 60rem;background: var(--accent);"></div></div>
+        </div>
+
       </section>
 
       <hr />
@@ -777,7 +809,7 @@
                 <img src="https://picsum.photos/32" alt="avatar" avatar>
                 <span>
                   <h6 style="margin-bottom: 0;">Fordus</h6>
-                  <small>& Nadaleio</small>
+                  <small>& Nandaleio</small>
                 </span>
               </div>
             </footer>
@@ -785,7 +817,7 @@
           </aside>
           
           <div class="demo-sidenav-content">
-            <nav>
+            <nav breadcrumb>
               <a href="#" style="display: flex; align-items: center;"> <i data-lucide="panel-left"></i> </a>
               <a href="#">Building Your Application</a>
               <a href="#">Data Fetching</a>
@@ -827,22 +859,21 @@
       <section id="sonner">
         <h2>Sonner</h2>
         <li id="sonnerLiExample" hidden>
-          <div class="demo-toast">
-            <div>
-              <h6>Scheduled: Catch up</h6>
-              <small>Friday, February 10, 2023 at 5:57 PM</small>
+            <div class="demo-toast">
+              <div>
+                <h6>Scheduled: Catch up</h6>
+                <small>Friday, February 10, 2023 at 5:57 PM</small>
+              </div>
+              <button>Undo</button>
             </div>
-            <button>Undo</button>
-          </div>
-        </li>
+          </li>
         <input type="submit" value="Add toast" onclick="
-          sonnerDialog.open = true;
           let li = document.getElementById('sonnerLiExample').cloneNode(true);
           li.hidden = false;
           sonnerDialog.appendChild(li);
           setTimeout(() => li.remove(), 5000);
         ">
-        <dialog id="sonnerDialog" sonner>
+        <dialog id="sonnerDialog" sonner open>
 
         </dialog>
       </section>
@@ -972,8 +1003,6 @@
     </main>
 
   </div>
-
-  <script src="js/theme-switcher.js"></script>
   <script src="js/lucide.min.js"></script>
   <script>
     lucide.createIcons();
