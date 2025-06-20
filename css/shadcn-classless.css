@@ -240,6 +240,10 @@ button {
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
   transition: background-color 0.2s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /** Primary */
@@ -261,6 +265,7 @@ button[secondary] {
 }
 
 /** Outline */
+button[outline],
 input[type="submit"] {
   border: var(--border);
   background-color: transparent;
@@ -271,6 +276,7 @@ input[type="submit"] {
 }
 
 /** Ghost */
+button[ghost],
 input[type='button'] {
   border: none;
   background-color: transparent;
@@ -280,7 +286,8 @@ input[type='button'] {
   }
 }
 
-/** Desctructive */
+/** Destructive */
+button[destructive],
 input[type="reset"] {
   border: none;
   background-color: var(--destructive);

@@ -88,6 +88,15 @@ body {
             margin: 1rem 0;
         }
 
+        #button {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .demo-button {
+            display: flex;
+            gap: 1rem;
+        }
         .demo-gapped {
             display: flex;
             flex-direction: column;
