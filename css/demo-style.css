@@ -151,6 +151,13 @@ body {
             align-items: center;
         }
 
+
+
+            .demo-tooltip {
+                display: flex;
+                gap: 1rem;
+            }
+
         .demo-sidenav-container {
             display: flex;
             flex-direction: row;
