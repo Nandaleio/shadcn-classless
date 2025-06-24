@@ -694,7 +694,7 @@ progress:indeterminate::-moz-progress-bar {
   }
 }
 
-hr {
+hr[role="separator"]{
   border: 0;
   height: 1px;
   margin: 1rem 0;
@@ -702,7 +702,7 @@ hr {
   flex-shrink: 0;
 }
 
-hr[vertical] {
+hr[role="separator"][vertical] {
   width: 1px;
   height: auto;
   margin: 0 1rem;
@@ -767,10 +767,7 @@ div[skeleton] {
 }
 
 /** Tooltip */
-[tooltip-top], 
-[tooltip-bottom], 
-[tooltip-left], 
-[tooltip-right] { 
+*[role="tooltip"] { 
   position: relative;
 
   &::after {
@@ -793,33 +790,35 @@ div[skeleton] {
   &:hover::after {
     opacity: 1;
   }
+  
+  &[tooltip-top]::after {
+    content: attr(tooltip-top);
+    left:50%;
+    top: -.8rem;
+    transform: translateX(-50%)   translateY(-100%);
+  }
+  &[tooltip-bottom]::after {
+    content: attr(tooltip-bottom);
+    left:50%;
+    top: calc(100% + 0.8rem);
+    transform: translateX(-50%) translateY(0%);
+  }
+  &[tooltip-left]::after {
+    content: attr(tooltip-left);
+    left: -0.3rem;
+    top:50%;
+    transform: translateX(-100%)   translateY(-50%);
+  }
+  &[tooltip-right]::after {
+    content: attr(tooltip-right);
+    left: calc(100% + 0.3rem);
+    top:50%;
+    margin-left:0.3rem;
+    transform: translateX(0%)   translateY(-50%);
+  }
+
 }
 
-[tooltip-top]::after {
-  content: attr(tooltip-top);
-  left:50%;
-  top: -.8rem;
-  transform: translateX(-50%)   translateY(-100%);
-}
-[tooltip-bottom]::after {
-  content: attr(tooltip-bottom);
-  left:50%;
-  top: calc(100% + 0.8rem);
-  transform: translateX(-50%) translateY(0%);
-}
-[tooltip-left]::after {
-  content: attr(tooltip-left);
-  left: -0.3rem;
-  top:50%;
-  transform: translateX(-100%)   translateY(-50%);
-}
-[tooltip-right]::after {
-  content: attr(tooltip-right);
-  left: calc(100% + 0.3rem);
-  top:50%;
-  margin-left:0.3rem;
-  transform: translateX(0%)   translateY(-50%);
-}
 
 /** Code */
 pre {
@@ -905,7 +904,7 @@ dialog[sonner] {
 }
 
 /** Sidebar */
-aside {
+aside[role="navigation"] {
   background-color: var(--sidebar);
   border: 1px solid var(--sidebar-border);
 
@@ -973,7 +972,7 @@ input[type="checkbox"][role="switch"] {
     left: 0.125rem;
     width: 1.125rem;
     height: 1.125rem;
-    background-color: white;
+    background-color: var(--background);
     border-radius: 9999px;
     box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease;
