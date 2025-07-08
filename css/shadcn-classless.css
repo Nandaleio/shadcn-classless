@@ -709,7 +709,7 @@ hr[role="separator"][vertical] {
 }
 
 /** Breadcrumbs */
-nav {
+nav[breadcrumb] {
   display: flex;
   align-items: center;
   --separator: attr(breadcrumb, '>');
@@ -727,9 +727,13 @@ nav {
         content: '';
       }
     }
-  }
-  &:hover::after {
+    &:hover {
+        color: var(--foreground);
         text-decoration: none;
+        &::after {
+          color: var(--muted-foreground);
+        }
+    }
   }
 }
 
@@ -767,7 +771,7 @@ div[skeleton] {
 }
 
 /** Tooltip */
-*[role="tooltip"] { 
+[role="tooltip"] { 
   position: relative;
 
   &::after {
