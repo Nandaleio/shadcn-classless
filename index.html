@@ -73,7 +73,7 @@
       <a href="#table">Table</a>
       <a disabled href="#">Tabs</a> <!--Should use role="tab" -->
       <a href="#textarea">Textarea</a>
-      <a href="#toast">Toast</a>
+      <a disabled href="#toast">Toast</a>
       <a href="#toggle">Toggle</a>
       <a href="#tooltip">Tooltip</a>
 
@@ -958,23 +958,6 @@
       <section id="textarea">
         <h2>Textarea</h2>
         <textarea></textarea>
-      </section>
-
-      <hr role="separator"/>
-
-      <section id="toast">
-        <h2>Toast</h2>
-        <input type="submit" value="Add to calendar" onclick="toastDialog.open = true">
-
-        <dialog id="toastDialog" toast>
-          <div class="demo-toast">
-            <div>
-              <h6>Scheduled: Catch up</h6>
-              <small>Friday, February 10, 2023 at 5:57 PM</small>
-            </div>
-            <input type="submit" value="Undo" onclick="toastDialog.close()">
-          </div>
-        </dialog>
       </section>
 
       <hr role="separator"/>
