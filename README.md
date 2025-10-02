@@ -15,13 +15,13 @@ A minimalist, class-less CSS framework inspired by the beautiful components of [
 You can include the framework directly via CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fordus/shadcn-classless@main/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nandaleio/shadcn-classless@main/dist/shadcn-classless.css">
 ```
 
 Or download the `shadcn-inspired-classless.min.css` file from this repository and include it locally:
 
 ```html
-<link rel="stylesheet" href="path/to/shadcn-inspired-classless.min.css">
+<link rel="stylesheet" href="path/to/shadcn-classless.css">
 ```
 
 Then, start writing your HTML without worrying about classes!
@@ -56,7 +56,7 @@ To customize the styles, you can override the CSS variables defined at the root 
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/fordus/shadcn-classless/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/nandaleio/shadcn-classless/issues).
 
 ## 📜 License
 

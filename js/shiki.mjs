@@ -34,7 +34,7 @@ document.querySelectorAll('section').forEach(async (section) => {
 });
 
 // INSTALLATION
-document.getElementById('installCDN').innerHTML = await codeToHtml('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fordus/shadcn-classless@main/css/style.css">', {lang,theme})
-document.getElementById('installLocal').innerHTML = await codeToHtml('<link rel="stylesheet" href="path/to/shadcn-inspired-classless.min.css">', {lang,theme})
+document.getElementById('installCDN').innerHTML = await codeToHtml('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nandaleio/shadcn-classless@main/dist/shadcn-classless.css">', {lang,theme})
+document.getElementById('installLocal').innerHTML = await codeToHtml('<link rel="stylesheet" href="path/to/shadcn-classless.css">', {lang,theme})
 
 
