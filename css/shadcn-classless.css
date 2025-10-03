@@ -414,6 +414,17 @@ details {
   border-radius: var(--radius);
   padding: 0.5rem;
   margin-bottom: 1rem;
+
+  & > *:not(summary) {
+    opacity: 0;
+    transform: translateY(-0.5em);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  &[open] > *:not(summary) {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 summary {
   cursor: pointer;
