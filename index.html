@@ -796,7 +796,7 @@
       <section id="sidebar">
         <h2>Sidebar</h2>
         <div class="demo-sidenav-container">
-          <aside role="navigation" style="width: 20%;">
+          <aside role="navigation" id="demo-sidebar" class="demo-sidebar-open">
 
             <header>
               <div class="demo-sidebar-header">
@@ -839,7 +839,7 @@
           </aside>
           
           <div class="demo-sidenav-content">
-            <nav breadcrumb=">">
+            <nav breadcrumb=">" id="sidebar-toggle-btn" onclick="toggleSideBar()">
               <a href="#" style="display: flex; align-items: center;"> <i data-lucide="panel-left"></i> </a>
               <a href="#">Building Your Application</a>
               <a href="#">Data Fetching</a>
@@ -849,6 +849,13 @@
             <div skeleton style="width: 100%; height: 30%;"></div>
           </div>
         </div>
+        <script>
+          function toggleSideBar() {
+            const sidebar = document.getElementById('demo-sidebar');
+            sidebar.classList.toggle('demo-sidebar-open');
+            sidebar.classList.toggle('demo-sidebar-close');
+          }
+        </script>
       </section>
 
       <hr role="separator"/>

@@ -164,6 +164,15 @@ body {
             width: 100%;
             height: 30rem;
 
+            .demo-sidebar-open {
+                width: 15%;
+            }
+            .demo-sidebar-close {
+                width: 0%;
+                padding: 0;
+                border: none;
+            }
+
             .demo-sidebar-header {
                 display: flex;
                 gap: 1rem;
