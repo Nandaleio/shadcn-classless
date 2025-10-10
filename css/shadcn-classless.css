@@ -130,19 +130,24 @@ html[data-theme="dark"] {
   padding: 0;
   box-sizing: border-box;
 
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-color) transparent;
+  scrollbar-width: auto;
+  scrollbar-color: var(--muted-foreground) var(--muted);
 }
 
 *::-webkit-scrollbar {
-  width: 5px;
+  width: 12px;
 }
 *::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 5px;
+  background: var(--muted-foreground);
+  border-radius: 6px;
+  border: 2px solid var(--background);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
 }
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--muted);
+  border-radius: 6px;
 }
 
 body {
