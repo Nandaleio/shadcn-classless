@@ -28,6 +28,6 @@ jobs:
         with:
           disable_globbing: true
           file_pattern: 'dist/shadcn-classless.css'
-          commit_message: "bot: Update minified CSS"
+          commit_message: "bot: Update minified CSS [skip ci]"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
