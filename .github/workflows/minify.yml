@@ -1,25 +1,33 @@
+name: Minify CSS
+
 on:
   push:
     branches:
       - main
+    paths:
+      - 'css/shadcn-classless.css'
 
 jobs:
   minify:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: auto minify the files
+      - name: Minify CSS
         uses: nizarmah/auto-minify@v3
         with:
           directory: 'css'
           output: 'dist'
           overwrite: true
 
-      - name: auto commit the minified files
+      - name: Commit minified files
         uses: stefanzweifel/git-auto-commit-action@v5
-        with:        
+        with:
           disable_globbing: true
           file_pattern: 'dist/shadcn-classless.css'
-          commit_message: "bot: Add auto minified file"
+          commit_message: "bot: Update minified CSS"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"

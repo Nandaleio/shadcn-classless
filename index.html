@@ -87,10 +87,9 @@
           <h1>shadcn-inspired</h1>
           <p>A class-less example inspired by shadcn components.</p>
         </hgroup>
-        <button onclick="
-        document.querySelector('html').setAttribute('data-theme', 
-        document.querySelector('html').getAttribute('data-theme')=='dark'?'light':'dark')">Toggle theme</button>
-  <!-- onclick="toggleDarkMode()" -->
+        <button id="themeToggle" onclick="toggleTheme()">
+          <span id="themeIcon">🌙</span> Toggle theme
+        </button>
         <p class="demo-intro-text">
           Please note that not all shadcn components nor features can be implemented only with CSS. <br />
           We try our best to get as close as possible to what it has to offer.
@@ -106,7 +105,7 @@
           <div id="installCDN" class="demo-code"></div>
         </p>
         <p>
-          Or download the shadcn-inspired-classless.min.css file from this repository and include it locally:
+          Or download the shadcn-classless.css file from this repository and include it locally:
           <div id="installLocal" class="demo-code"></div>
         </p>
         <p>
@@ -1008,6 +1007,46 @@
     lucide.createIcons();
   </script>
   <script src="js/shiki.mjs" type="module"></script>
+  <script>
+    // Theme toggler
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    }
+
+    function updateThemeIcon(theme) {
+      const icon = document.getElementById('themeIcon');
+      if (icon) {
+        icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+    }
+
+    // Initialize theme from localStorage or system preference
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+      document.documentElement.setAttribute('data-theme', initialTheme);
+      updateThemeIcon(initialTheme);
+    }
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        const newTheme = e.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        updateThemeIcon(newTheme);
+      }
+    });
+
+    // Initialize on page load
+    initTheme();
+  </script>
 </body>
 
 </html>

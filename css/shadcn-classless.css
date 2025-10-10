@@ -78,12 +78,22 @@
   }
 }
 
-body {
+html {
   color-scheme: light dark;
 }
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 
   scrollbar-width: thin;
   scrollbar-color: var(--border-color) transparent;
@@ -101,11 +111,12 @@ body {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   background-color: var(--background);
   color: var(--foreground);
   line-height: 1.5;
   padding: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 h1,
 h2,
@@ -159,9 +170,16 @@ p {
 a {
   color: var(--primary);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 a:hover {
   text-decoration: underline;
+  color: color-mix(in srgb, var(--primary) 80%, transparent);
+}
+a:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 ul,
 ol {
@@ -206,6 +224,20 @@ textarea {
   background-color: var(--background);
   color: var(--foreground);
   font-size: 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="search"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 15%, transparent);
 }
 input[type="color"] {
   appearance: none;
@@ -249,6 +281,13 @@ button {
   color: var(--primary-foreground);
   &:hover {
     background-color: color-mix(in srgb, var(--primary) 90%, transparent);
+  }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 30%, transparent);
+  }
+  &:active {
+    transform: scale(0.98);
   }
 }
 /** Secondary */
@@ -434,6 +473,18 @@ footer {
     padding-right: 1rem;
   }
 }
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   body {
     padding: 0.5rem;
@@ -450,8 +501,17 @@ input[type='file']::file-selector-button {
   font-weight: 600;
 }
 
-*:disabled {
+:disabled,
+[disabled] {
   cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  pointer-events: none;
 }
 
 input[type='radio'],
