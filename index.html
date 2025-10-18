@@ -32,7 +32,8 @@
       <a href="#avatar">Avatar</a>
       <a href="#badge">Badge</a>
       <a href="#breadcrumb">Breadcrumb</a>
-      <a href="#button">Button</a>
+      <a href="#button">Buttons</a>
+      <a href="#buttonGroup">Button Group</a>
       <a disabled href="#">Calendar</a>
       <a href="#card">Card</a>
       <a href="#carousel">Carousel</a>
@@ -53,7 +54,6 @@
       <a href="#input">Input</a>
       <a href="#inputotp">Input OTP</a>
       <a href="#label">Label</a>
-      <a href="#loading">Loading</a>
       <a href="#menubar">Menubar</a>
       <a href="#navigationmenu">Navigation Menu</a>
       <a disabled href="#">Pagination</a>
@@ -69,6 +69,7 @@
       <a href="#skeleton">Skeleton</a>
       <a href="#slider">Slider</a>
       <a href="#sonner">Sonner</a>
+      <a href="#spinner">Spinner</a>
       <a href="#switch">Switch</a>
       <a href="#table">Table</a>
       <a disabled href="#">Tabs</a> <!--Should use role="tab" -->
@@ -90,7 +91,6 @@
         <button onclick="
         document.querySelector('html').setAttribute('data-theme', 
         document.querySelector('html').getAttribute('data-theme')=='dark'?'light':'dark')">Toggle theme</button>
-  <!-- onclick="toggleDarkMode()" -->
         <p class="demo-intro-text">
           Please note that not all shadcn components nor features can be implemented only with CSS. <br />
           We try our best to get as close as possible to what it has to offer.
@@ -324,9 +324,40 @@
             <i data-lucide="trash-2"></i>
           </button>
         </div>
-
-
         
+      </section>
+      
+      <hr role="separator"/>
+
+      <section id="buttonGroup">
+        <h2>Button Group</h2>
+          <fieldset role="group">
+            <button>primary</button>
+            <button secondary>secondary</button>
+            <button outline>Outline</button>
+            <button ghost>Ghost</button>
+            <button destructive>Destructive</button>
+          </fieldset>
+
+          <fieldset role="group">
+          <button> 
+            <i data-lucide="send"></i> 
+          </button>
+          <button secondary>
+            <i data-lucide="panel-right"></i>
+          </button>
+          <button outline>
+            <i data-lucide="type-outline"></i>
+          </button>
+          <button ghost>
+            <i data-lucide="ghost"></i>
+          </button>
+          <button destructive>
+            <i data-lucide="trash-2"></i>
+          </button>
+          
+          </fieldset>
+
       </section>
 
       <hr role="separator"/>
@@ -583,25 +614,13 @@
       <section id="label">
         <h2>Labels</h2>
         <label>
+          Label before input
           <input type="checkbox" checked/>
-          Label
         </label>
         <label>
           <input type="checkbox"/>
-          Another label
+          Label after input
         </label>
-      </section>
-
-      <hr role="separator"/>
-
-      <section id="loading">
-        <h2>Loading</h2>
-        <article aria-busy="true" style="text-align: center;"></article>
-        <button aria-busy="true">Please wait…</button>
-        <br/>
-        <small>With spinner:</small>
-        <article aria-busy="spinner" style="text-align: center;"></article>
-        <button aria-busy="spinner">Please wait…</button>
       </section>
 
       <hr role="separator"/>
@@ -906,6 +925,20 @@
 
         </dialog>
       </section>
+
+      <hr role="separator"/>
+      
+
+      <section id="spinner">
+        <h2>Spinner</h2>
+        <article aria-busy="true" style="text-align: center;"></article>
+        <button aria-busy="true">Please wait…</button>
+        <br/>
+        <small>With spinner:</small>
+        <article aria-busy="spinner" style="text-align: center;"></article>
+        <button aria-busy="spinner">Please wait…</button>
+      </section>
+
 
       <hr role="separator"/>
 
