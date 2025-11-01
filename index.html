@@ -478,12 +478,14 @@
           </label>
 
           <!-- File browser -->
-          <label>File browser
+          <label>
+            File browser
             <input type="file" name="file" />
           </label>
 
           <!-- Range slider control -->
-          <label>Range slider
+          <label>
+            Range slider
             <input type="range" min="0" max="100" value="50" name="range" />
           </label>
 
@@ -494,17 +496,20 @@
           </label>
 
           <!-- Date-->
-          <label>Date
+          <label>
+            Date
             <input type="date" name="date" />
           </label>
 
           <!-- Time-->
-          <label>Time
+          <label>
+            Time
             <input type="time" name="time" />
           </label>
 
           <!-- Color-->
-          <label>Color
+          <label>
+            Color
             <input type="color" name="color" value="#0eaaaa" />
           </label>
 
@@ -563,6 +568,12 @@
             <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
             <input type="submit" value="Subscribe" />
           </fieldset>
+          <small>vertical:</small>
+          <fieldset role="group" aria-orientation="vertical">
+            <input type="submit" value="Top" />
+            <input type="submit" value="Middle" />
+            <input type="submit" value="Bottom" />
+          </fieldset>
       </section>
 
       <hr role="separator"/>
@@ -595,13 +606,13 @@
       <section id="inputotp">
         <h2>Input OTP</h2>
         <div class="demo-otp">
-          <fieldset role="otp">
+          <fieldset role="group" otp>
             <input type="text" maxlength="1">
             <input type="text" maxlength="1">
             <input type="text" maxlength="1">
           </fieldset>
           -
-          <fieldset role="otp">
+          <fieldset role="group" otp>
             <input type="text" maxlength="1">
             <input type="text" maxlength="1">
             <input type="text" maxlength="1">
