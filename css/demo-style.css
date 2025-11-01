@@ -13,10 +13,10 @@
         --sidenav-display: none;
     }
 }
-body {    
-    margin: var(--body-margin);
+body {
+    margin: 0;
     padding: 0;
-
+    max-width: none;
     height: 100vh;
     overflow: hidden;
 }
@@ -34,7 +34,7 @@ body {
 .demo-container {
     display: flex;
     flex-direction: row;
-
+    justify-content: center;
     height: 100%;
 
     .demo-sidenav {
@@ -51,6 +51,8 @@ body {
 
         width: 100%;
         max-width: max-content;
+        position: sticky;
+        left: 0;
 
         
         a {
@@ -79,6 +81,8 @@ body {
         padding: 2rem;
         overflow-y: auto;
         border-right: 1px solid var(--border);
+        max-width: 900px;
+        width: 100%;
 
         .demo-intro-text {
             margin-top: 1rem;
