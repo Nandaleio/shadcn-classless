@@ -1,0 +1,28 @@
+{
+  "name": "shadcn-classless",
+  "version": "0.0.0-development",
+  "description": "A minimalist, class-less CSS framework inspired by shadcn/ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fordus/shadcn-classless.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "classless",
+    "shadcn",
+    "ui",
+    "design-system"
+  ],
+  "author": "fordus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fordus/shadcn-classless/issues"
+  },
+  "homepage": "https://github.com/fordus/shadcn-classless#readme",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^23.0.0"
+  }
+}
