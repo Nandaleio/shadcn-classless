@@ -750,9 +750,9 @@
         <hr role="separator"/>
         <div style="display: flex;">
           <a href="#">Blog</a>
-          <hr role="separator" vertical />
+          <hr role="separator" aria-orientation="vertical" />
           <a href="#">Docs</a>
-          <hr role="separator" vertical />
+          <hr role="separator" aria-orientation="vertical" />
           <a href="#">Source</a>
         </div>
       </section>
@@ -946,8 +946,8 @@
         <button aria-busy="true">Please wait…</button>
         <br/>
         <small>With spinner:</small>
-        <article aria-busy="spinner" style="text-align: center;"></article>
-        <button aria-busy="spinner">Please wait…</button>
+        <article aria-busy="true" aria-details="spinner" style="text-align: center;"></article>
+        <button aria-busy="true" aria-details="spinner">Please wait…</button>
       </section>
 
 

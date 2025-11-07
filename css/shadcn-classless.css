@@ -532,13 +532,11 @@ footer {
 [aria-busy='true'] {
   opacity: 0.7;
   cursor: progress;
-}
-[aria-busy="spinner"]{
-  opacity: 0.7;
-  cursor: progress;
-  &::before {
-    content: var(--loading-icon-url);
-    padding-right: 1rem;
+  &[aria-details="spinner"]{
+    &::before {
+      content: var(--loading-icon-url);
+      padding-right: 1rem;
+    }
   }
 }
 /* Reduced motion */
@@ -821,12 +819,12 @@ hr[role="separator"]{
   margin: 1rem 0;
   background-color: var(--border-color);
   flex-shrink: 0;
-}
-
-hr[role="separator"][vertical] {
-  width: 1px;
-  height: auto;
-  margin: 0 1rem;
+  
+  &[aria-orientation="vertical"] {
+    width: 1px;
+    height: auto;
+    margin: 0 1rem;
+  }
 }
 
 /** Breadcrumbs */
