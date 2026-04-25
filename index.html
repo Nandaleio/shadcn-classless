@@ -382,7 +382,71 @@
 
       <section id="carousel">
         <h2>Carousel</h2>
-        TODO
+
+        <h3>Simple</h3>
+        <small>Uses keyboard arrows for navigation</small>
+        <ul carousel aria-label="Nature photos">
+          <li><img src="https://picsum.photos/seed/a/860/320" alt="Nature landscape 1" style="width:100%;height:320px;object-fit:cover;"></li>
+          <li><img src="https://picsum.photos/seed/b/860/320" alt="Nature landscape 2" style="width:100%;height:320px;object-fit:cover;"></li>
+          <li><img src="https://picsum.photos/seed/c/860/320" alt="Nature landscape 3" style="width:100%;height:320px;object-fit:cover;"></li>
+        </ul>
+
+        <h3>With dot navigation</h3>
+        <small>Needs JS</small>
+        <figure carousel>
+          <ul aria-label="Featured slides" id="carousel-dots-list">
+            <li id="dot-slide-1" role="group" aria-label="Slide 1 of 3">
+              <img src="https://picsum.photos/seed/d/860/320" alt="Slide 1" style="width:100%;height:320px;object-fit:cover;">
+            </li>
+            <li id="dot-slide-2" role="group" aria-label="Slide 2 of 3">
+              <img src="https://picsum.photos/seed/e/860/320" alt="Slide 2" style="width:100%;height:320px;object-fit:cover;">
+            </li>
+            <li id="dot-slide-3" role="group" aria-label="Slide 3 of 3">
+              <img src="https://picsum.photos/seed/f/860/320" alt="Slide 3" style="width:100%;height:320px;object-fit:cover;">
+            </li>
+          </ul>
+          <nav aria-label="Slide navigation" id="carousel-dots-nav">
+            <a href="#dot-slide-1" aria-label="Go to slide 1"></a>
+            <a href="#dot-slide-2" aria-label="Go to slide 2"></a>
+            <a href="#dot-slide-3" aria-label="Go to slide 3"></a>
+          </nav>
+        </figure>
+        <script>
+          (function () {
+            const list = document.getElementById('carousel-dots-list');
+            const dots = document.querySelectorAll('#carousel-dots-nav > a');
+            const observer = new IntersectionObserver(
+              (entries) => entries.forEach((e) => {
+                if (!e.isIntersecting) return;
+                const idx = [...list.children].indexOf(e.target);
+                dots.forEach((d, i) => {
+                  d.style.opacity = i === idx ? '1' : '';
+                  d.style.backgroundColor = i === idx ? 'var(--primary)' : '';
+                });
+              }),
+              { root: list, threshold: 0.6 }
+            );
+            [...list.children].forEach((li) => observer.observe(li));
+          })();
+        </script>
+
+        <h3>Multi-item (multi="2")</h3>
+        <ul carousel multi="2" aria-label="Featured photos, 2 at a time">
+          <li><img src="https://picsum.photos/seed/g/420/240" alt="Photo 1" style="width:100%;height:240px;object-fit:cover;border-radius:var(--radius)"></li>
+          <li><img src="https://picsum.photos/seed/h/420/240" alt="Photo 2" style="width:100%;height:240px;object-fit:cover;border-radius:var(--radius)"></li>
+          <li><img src="https://picsum.photos/seed/i/420/240" alt="Photo 3" style="width:100%;height:240px;object-fit:cover;border-radius:var(--radius)"></li>
+          <li><img src="https://picsum.photos/seed/j/420/240" alt="Photo 4" style="width:100%;height:240px;object-fit:cover;border-radius:var(--radius)"></li>
+        </ul>
+
+        <h3>Multi-item (multi="4")</h3>
+        <ul carousel multi="4" aria-label="Featured photos, 4 at a time">
+          <li><img src="https://picsum.photos/seed/k/420/240" alt="Photo 1" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius)"></li>
+          <li><img src="https://picsum.photos/seed/l/420/240" alt="Photo 2" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius)"></li>
+          <li><img src="https://picsum.photos/seed/m/420/240" alt="Photo 3" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius)"></li>
+          <li><img src="https://picsum.photos/seed/n/420/240" alt="Photo 4" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius)"></li>
+          <li><img src="https://picsum.photos/seed/o/420/240" alt="Photo 5" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius)"></li>
+          <li><img src="https://picsum.photos/seed/p/420/240" alt="Photo 6" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius)"></li>
+        </ul>
       </section>
 
       <hr role="separator"/>

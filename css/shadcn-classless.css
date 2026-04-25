@@ -1170,6 +1170,87 @@ input[type="checkbox"][role="switch"] {
   }
 }
 
+/** Carousel */
+ul[carousel],
+figure[carousel] > ul {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  list-style: none;
+  padding: 0;
+  gap: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > li {
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+}
+
+ul[carousel] {
+  border-radius: var(--radius);
+}
+
+ul[carousel][multi],
+figure[carousel][multi] {
+  --_n: attr(multi type(<number>), 0);
+}
+
+ul[carousel][multi],
+figure[carousel][multi] > ul {
+  gap: 1rem;
+
+  > li {
+    flex: 0 0 calc((100% - (var(--_n) - 1) * 1rem) / var(--_n));
+  }
+}
+
+figure[carousel] {
+  overflow: visible;
+
+  > ul {
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  > nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem;
+    border: var(--border);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+
+    > a {
+      display: block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 9999px;
+      background-color: var(--muted-foreground);
+      opacity: 0.4;
+      transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        opacity: 1;
+        background-color: var(--primary);
+        transform: scale(1.25);
+      }
+
+      &:focus-visible {
+        opacity: 1;
+        outline: 2px solid var(--ring);
+        outline-offset: 3px;
+      }
+    }
+  }
+}
+
 /* Forced colors (Windows High Contrast mode) */
 @media (forced-colors: active) {
   input[type="checkbox"][role="switch"] {
