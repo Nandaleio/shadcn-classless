@@ -1170,6 +1170,71 @@ input[type="checkbox"][role="switch"] {
   }
 }
 
+/** Charts */
+dl[chart] {
+  padding: 0;
+  > div:nth-child(5n+1) > dd { background-color: var(--chart-1); }
+  > div:nth-child(5n+2) > dd { background-color: var(--chart-2); }
+  > div:nth-child(5n+3) > dd { background-color: var(--chart-3); }
+  > div:nth-child(5n+4) > dd { background-color: var(--chart-4); }
+  > div:nth-child(5n+5) > dd { background-color: var(--chart-5); }
+}
+
+dl[chart="bar"] {
+  --chart-h: 200px;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+
+  > div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    flex: 1;
+    gap: 0.25rem;
+
+    > dd {
+      width: 100%;
+      height: calc(var(--v, 0) * var(--chart-h) / 100);
+      border-radius: var(--radius) var(--radius) 0 0;
+      overflow: hidden;
+      transition: height 0.4s ease;
+    }
+
+    > dt {
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+      white-space: nowrap;
+    }
+  }
+
+  &[aria-orientation="horizontal"] {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+
+    > div {
+      flex-direction: row;
+      flex: initial;
+      align-items: center;
+      gap: 0.5rem;
+
+      > dt {
+        width: 5rem;
+        flex-shrink: 0;
+        text-align: right;
+      }
+
+      > dd {
+        height: 1.75rem;
+        width: calc(var(--v, 0) * 1%);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        transition: width 0.4s ease;
+      }
+    }
+  }
+}
+
 /** Carousel */
 ul[carousel],
 figure[carousel] > ul {
