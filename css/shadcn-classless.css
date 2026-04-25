@@ -42,8 +42,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root,
-  [data-theme="dark"] {
+  :root {
     --background: oklch(0.141 0.005 285.823);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.21 0.006 285.885);
@@ -75,7 +74,6 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.552 0.016 285.938);
-    --border: 1px solid var(--border-color);
   }
 }
 
@@ -89,9 +87,6 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   color-scheme: dark;
-}
-
-html[data-theme="dark"] {
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
@@ -123,7 +118,6 @@ html[data-theme="dark"] {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-  --border: 1px solid var(--border-color);
 }
 
 * {
@@ -263,6 +257,7 @@ textarea {
   font-weight: 500;
   font: inherit;
   padding: 0.5rem;
+  min-height: 2.75rem;
   border: var(--border);
   border-radius: var(--radius);
   background-color: var(--background);
@@ -314,6 +309,7 @@ button {
   font-size: 0.875rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
+  min-height: 2.75rem;
   border-radius: var(--radius);
   transition: background-color 0.2s ease-in-out;
 
@@ -517,6 +513,11 @@ details {
 summary {
   cursor: pointer;
   font-weight: bold;
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+  }
 }
 article {
   border: var(--border);
@@ -589,26 +590,28 @@ input[type='range'] {
 
 /** Toggles */
 input[type="checkbox"][icon] {
-  display: none;
-  + * {
-    cursor: pointer;
-    border-radius: var(--radius);
-    padding: 0.5rem;
-    box-sizing: border-box;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 
-    &:hover {
-      background-color: var(--border-color);
-    }
+  &:focus-visible + * {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
-}
-input[type="checkbox"][icon] {
-  display: none;
+
   + * {
     cursor: pointer;
     border-radius: var(--radius);
     width: 2rem;
     height: 2rem;
     padding: 0.5rem;
+    box-sizing: border-box;
 
     &:hover {
       background-color: var(--border-color);
@@ -665,7 +668,7 @@ table {
     border-bottom: var(--border);
   }
   tr:hover {
-    background-color: hsl(var(--muted) / 0.5);
+    background-color: color-mix(in srgb, var(--muted) 50%, transparent);
   }
 
   td,
@@ -846,6 +849,15 @@ nav[breadcrumb] {
         content: '';
       }
     }
+    &[aria-current="page"] {
+      color: var(--foreground);
+      font-weight: 600;
+      pointer-events: none;
+      text-decoration: none;
+      &::after {
+        content: '';
+      }
+    }
     &:hover {
         color: var(--foreground);
         text-decoration: none;
@@ -890,7 +902,7 @@ div[skeleton] {
 }
 
 /** Tooltip */
-[role="tooltip"] { 
+[role="tooltip"] {
   position: relative;
 
   &::after {
@@ -902,23 +914,38 @@ div[skeleton] {
     padding: 6px 8px;
     font-size: 0.875em;
     border-radius: var(--radius);
-    
+
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
-  
+
     z-index: 10;
+  }
+
+  /* transparent bridge between trigger and tooltip so the tooltip is hoverable (WCAG 1.4.13) */
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 9;
+    opacity: 0;
     pointer-events: none;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &:hover::before {
     opacity: 1;
+    pointer-events: auto;
   }
-  
+
   &[tooltip-top]::after {
     content: attr(tooltip-top);
     left:50%;
     top: -.8rem;
-    transform: translateX(-50%)   translateY(-100%);
+    transform: translateX(-50%) translateY(-100%);
+  }
+  &[tooltip-top]::before {
+    left: 0; right: 0;
+    bottom: 100%;
+    height: 0.9rem;
   }
   &[tooltip-bottom]::after {
     content: attr(tooltip-bottom);
@@ -926,18 +953,33 @@ div[skeleton] {
     top: calc(100% + 0.8rem);
     transform: translateX(-50%) translateY(0%);
   }
+  &[tooltip-bottom]::before {
+    left: 0; right: 0;
+    top: 100%;
+    height: 0.9rem;
+  }
   &[tooltip-left]::after {
     content: attr(tooltip-left);
     left: -0.3rem;
     top:50%;
-    transform: translateX(-100%)   translateY(-50%);
+    transform: translateX(-100%) translateY(-50%);
+  }
+  &[tooltip-left]::before {
+    top: 0; bottom: 0;
+    right: 100%;
+    width: 0.4rem;
   }
   &[tooltip-right]::after {
     content: attr(tooltip-right);
     left: calc(100% + 0.3rem);
     top:50%;
     margin-left:0.3rem;
-    transform: translateX(0%)   translateY(-50%);
+    transform: translateX(0%) translateY(-50%);
+  }
+  &[tooltip-right]::before {
+    top: 0; bottom: 0;
+    left: 100%;
+    width: 0.4rem;
   }
 
 }
@@ -1083,6 +1125,7 @@ input[type="checkbox"][role="switch"] {
   -webkit-appearance: none;
   width: 2.8rem;
   height: 1.5rem;
+  min-height: unset;
   background-color: var(--muted);
   border-radius: 9999px;
   position: relative;
@@ -1090,6 +1133,10 @@ input[type="checkbox"][role="switch"] {
   transition: background-color 0.2s ease;
   &:checked {
     background-color: var(--primary);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
   &::before {
     content: "";
@@ -1105,5 +1152,39 @@ input[type="checkbox"][role="switch"] {
   }
   &:checked::before {
     transform: translateX(1.25rem);
+  }
+}
+
+/* High contrast preference */
+@media (prefers-contrast: more) {
+  :root {
+    --border-color: currentColor;
+    --ring: currentColor;
+  }
+  :disabled,
+  [disabled] {
+    opacity: 0.7;
+  }
+  [role="tooltip"]::after {
+    border: 2px solid var(--background);
+  }
+}
+
+/* Forced colors (Windows High Contrast mode) */
+@media (forced-colors: active) {
+  input[type="checkbox"][role="switch"] {
+    appearance: auto;
+  }
+  progress {
+    appearance: auto;
+  }
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid ButtonText;
+    box-shadow: none;
   }
 }
