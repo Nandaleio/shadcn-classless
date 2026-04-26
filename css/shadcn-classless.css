@@ -39,6 +39,8 @@
   --loading-icon-url: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' stroke='rgb(184, 184, 184)' stroke-width='20' fill='none' stroke-linecap='round' stroke-dasharray='200' stroke-dashoffset='100'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 50 50' to='360 50 50' dur='1s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/svg%3E");
 
   --border: 1px solid var(--border-color);
+
+  interpolate-size: allow-keywords;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -498,24 +500,22 @@ details {
   border-radius: var(--radius);
   padding: 0.5rem;
   margin-bottom: 1rem;
-
-  & > *:not(summary) {
-    opacity: 0;
-    transform: translateY(-0.5em);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  &[open] > *:not(summary) {
-    opacity: 1;
-    transform: translateY(0);
-  }
+}
+details::details-content {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s, content-visibility 0.3s;  
+  transition-behavior: allow-discrete;
+}
+details[open]::details-content {
+  height: auto;
 }
 summary {
   cursor: pointer;
   font-weight: bold;
   &:focus-visible {
     outline: 2px solid var(--ring);
-    outline-offset: 2px;
+    outline-offset: 0.5rem;
     border-radius: var(--radius);
   }
 }
